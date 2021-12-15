@@ -143,10 +143,10 @@
   ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing row">  <!-- containers de articulos destacados -->
-
+    <div class="container marketing d-flex">  <!-- containers de articulos destacados -->
      <!--foreach-->
-        <div class="card" style="width: 18rem;">
+     @for($i=0; $i<5; $i++)
+        <div class="card " style="width: 18rem;">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -154,6 +154,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
+      @endfor 
       <!--foreachend-->
       
     </div><!-- /.row -->
