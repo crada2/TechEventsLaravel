@@ -145,7 +145,12 @@
             <h5 class="card-title">{{$event->title}}</h5>
             <p class="card-text">{{$event->text}}</p>
             <p class="card-date">{{$event->date}}</p>
-            <a href="#" class="btn btn-primary"> Enroll in Course</a>
+            <a href="#" class="btn btn-primary">Enroll in Course</a>
+            <form action="/events/{{ $event->id }}" method="POST">
+              @csrf
+              @method('DELETE')
+            <a href="#" class="btn btn-secondary" type="submit">Delete</a>
+          </form>
           </div>
         </div>
       @endforeach

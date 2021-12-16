@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ use App\Http\Controllers\LandingController;
 });*/
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
+
+Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 
