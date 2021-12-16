@@ -149,7 +149,7 @@
             <form action="/events/{{ $event->id }}" method="POST">
               @csrf
               @method('DELETE')
-              <button type="submit" class="btn btn-primary">Delete</button>
+              <button type="submit" class="btn btn-secondary">Delete</button>
           </form>
           </div>
         </div>
