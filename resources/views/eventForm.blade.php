@@ -46,7 +46,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="./plantillaBoostrap_html_files/carousel.css" rel="stylesheet">
+  <link href="{{asset('events-css/carousel.css')}}" rel="stylesheet">
 </head>
 
 <body>
