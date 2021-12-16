@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -25,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+       return view('eventForm');
     }
 
     /**
@@ -34,9 +35,17 @@ class EventController extends Controller
      * @param  \App\Http\Requests\StoreEventRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEventRequest $request)
+    public function store(Request $request)
     {
-        //
+       $data = [
+           'title' => $request->title,
+           'img' => $request->img,
+           'text' => $request->text,
+           'date' => $request->date
+       ];
+       
+       Event::create($data);
+       return redirect(route('landing'));
     }
 
     /**

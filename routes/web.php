@@ -20,6 +20,7 @@ use App\Http\Controllers\EventController;
 });*/
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-
+Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
+Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 

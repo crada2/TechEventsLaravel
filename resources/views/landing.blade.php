@@ -16,7 +16,7 @@
 
 
   <!-- Bootstrap core CSS -->
-  <link href="./plantillaBoostrap_html_files/bootstrap.min.css" rel="stylesheet">
+  <link href="./events-css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -208,7 +208,7 @@
   </main>
 
 
-  <script src="./plantillaBoostrap_html_files/bootstrap.bundle.min.js" ></script>
+  <script src="./events-css/bootstrap.bundle.min.js" ></script>
 
 
 
