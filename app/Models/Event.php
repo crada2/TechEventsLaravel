@@ -13,7 +13,7 @@ class Event extends Model
         'title',
         'img',
         'text',
-        'date'
+        'date_time'
         
     ];
 }

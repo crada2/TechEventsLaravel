@@ -92,8 +92,8 @@
           <img class="bd-placeholder-img" width="100%" height="100%" src="https://ak.picdn.net/shutterstock/videos/1009948880/thumb/1.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Example headline.</h1>
-              <p>Some representative placeholder content for the first slide of the carousel.</p>
+              <h1>The Ultimate Docker Course</h1>
+              <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
               <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Sign up today</a></p>
             </div>
           </div>
@@ -103,8 +103,8 @@
 
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <h1>The Ultimate React Native Series</h1>
+              <p>Everything you need to build and distribute professional-quality apps with React Native.</p>
               <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Learn more</a></p>
             </div>
           </div>
@@ -114,8 +114,8 @@
 
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <h1>The Ultimate Redux Course</h1>
+              <p>Go from beginner to expert in 6 hours. Everything you need to build modern apps with Redux.</p>
               <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Browse gallery</a></p>
             </div>
           </div>

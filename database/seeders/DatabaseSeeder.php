@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
       Event::factory()->create([
            "title"=>'The Ultimate Java Mastery Series',
-           "img"=>'https://wi.wallpapertip.com/wsimgs/83-838172_programming-javascript.jpg',
+           "img"=>'https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/t12BZqmRoulvCTDhoYie',
            "text"=>'From Java zero to hero - Master the world’ls most popular coding language',
            "date_time"=>'2021-12-29 01:12:08'
        ]);  

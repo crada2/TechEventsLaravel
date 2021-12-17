@@ -41,7 +41,7 @@ class EventController extends Controller
            'title' => $request->title,
            'img' => $request->img,
            'text' => $request->text,
-           'date' => $request->date
+           'date_time' => $request->date_time
        ];
        
        Event::create($data);
