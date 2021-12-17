@@ -101,7 +101,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputText1">DATE</label>
-                <input name="date" type="date" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+                <input name="date" type="date_time" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
               </div>
               <button type="submit" class="btn btn-primary">Submint</button>
             </form>

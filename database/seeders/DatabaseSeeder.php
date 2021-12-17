@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-       Event::factory()->create([
-           "title"=>'The Ultimate Full-stack JavaScript Developer Bundle',
+      Event::factory()->create([
+           "title"=>'The Ultimate Java Mastery Series',
            "img"=>'https://wi.wallpapertip.com/wsimgs/83-838172_programming-javascript.jpg',
-           "text"=>'Master all the JavaScript skills you need to land a full-stack developer job',
-           "date"=>'31st December 2021 20:00h'
-       ]);
+           "text"=>'From Java zero to hero - Master the world’ls most popular coding language',
+           "date_time"=>'2021-12-29 01:12:08'
+       ]);  
        Event::factory(4)->create();
     }
 }
