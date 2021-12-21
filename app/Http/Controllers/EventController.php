@@ -6,6 +6,7 @@ use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -41,7 +42,8 @@ class EventController extends Controller
            'title' => $request->title,
            'img' => $request->img,
            'text' => $request->text,
-           'date_time' => $request->date_time
+           'date_time' => $request->date_time,
+           'user_id' => Auth::user()->id
        ];
        
        Event::create($data);
@@ -90,7 +92,15 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        Event::destroy(($id));
+
+        $eventToDelete = Event::findOrFail($id);
+        if (Auth::id() != $eventToDelete->author->id)
+        {
+            return back();
+        }
+
+        $eventToDelete->delete();
+      //  Event::destroy(($id));
         return back();
     }
 }

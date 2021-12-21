@@ -22,6 +22,13 @@
     <link href="{{asset('events-css/carousel.css')}}" rel="stylesheet"> <!-- link boostrap??????-->
 </head>
 <body>
+    @auth
+        <section>
+         <a href="{{ route('events.create') }}">New Instant</a>
+            /
+         <a href="#">My Instants</a>
+        </section>
+    @endauth
     <div id="app">
             @yield('content')
     </div>

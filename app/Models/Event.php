@@ -13,7 +13,13 @@ class Event extends Model
         'title',
         'img',
         'text',
-        'date_time'
+        'date_time',
+        'user_id'
         
     ];
+
+    //Eloquent relations
+    public function author() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
