@@ -8,6 +8,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class EventController extends Controller
 {
     /**
@@ -39,13 +40,23 @@ class EventController extends Controller
     public function store(Request $request)
     {
        $data = [
+
            'title' => $request->title,
            'img' => $request->img,
            'text' => $request->text,
            'date_time' => $request->date_time,
            'user_id' => Auth::user()->id
        ];
-       
+
+        //dd($request->hasFile('img'));
+        if( $request->hasFile('img') ) {
+            $file = $request->file('img');
+            $destinationPath = 'featured/images/';
+            $filename = $file->getClientOriginalName();
+            $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
+            $img = $destinationPath . $filename;
+        }
+
        Event::create($data);
        return redirect(route('landing'));
     }

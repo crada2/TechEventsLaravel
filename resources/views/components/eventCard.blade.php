@@ -1,6 +1,6 @@
 @props(['event'])
 <div class="card " style="width: 18rem;">
-  <img src="{{$event->img}}" class="card-img-top" alt="...">
+  <img src="{{asset($event->img)}}" class="card-img-top" alt="...">
   <div class="card-body">
    <h5 class="card-title">{{$event->title}}</h5>
    <p class="card-text">{{ $event->author->name }}</p>

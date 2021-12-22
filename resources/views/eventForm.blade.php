@@ -9,15 +9,15 @@
       <div class="album py-5 bg-light">
         <div class="container">
             <div class="row" id="list">
-              <form action='{{ route('events.store')}}' method="POST">
+              <form action='{{ route('events.store')}}' method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">TITLE</label>
                   <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">IMAGE URL</label>
-                  <input name="img" type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="img">IMAGE URL</label>
+                  <input type="file" name="img" class="form-control" id="featured">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputText1">DESCRIPTION</label>
@@ -27,7 +27,7 @@
                   <label for="exampleInputText1">DATE</label>
                   <input name="date_time" type="date_time" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
                 </div>
-                <button type="submit" class="btn btn-primary">Submint</button>
+                <button type="submit" class="btn btn-primary">Save</button>
               </form>
             </div>
         </div>

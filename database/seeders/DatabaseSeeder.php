@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         User::factory([
             'email' => 'admin@admin.com',
             'name' => 'Admin',
-            'password' => ''
         ])->create();
 
       User::factory(4)->create();
@@ -29,7 +28,7 @@ class DatabaseSeeder extends Seeder
            "text"=>'From Java zero to hero - Master the world’ls most popular coding language',
            "date_time"=>'2021-12-29 01:12:08',
            "user_id" =>'1'
-       ]);  
+       ]);
        Event::factory(4)->create();
     }
 }
