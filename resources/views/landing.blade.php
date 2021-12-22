@@ -13,34 +13,36 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="bd-placeholder-img" width="100%" height="100%" src="https://ak.picdn.net/shutterstock/videos/1009948880/thumb/1.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://2.bp.blogspot.com/-6NxUmY-aZp8/UYfiaj_9o9I/AAAAAAAABV0/alUMUycPe5o/s1600/Fondo+HD+para+bajar+-+WiriWiri_info+-+(90).png" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
           <div class="container">
             <div class="carousel-caption text-start">
               <h1>The Ultimate Docker Course</h1>
               <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Sign up today</a></p>
+              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Sign up today</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="bd-placeholder-img" width="100%" height="100%" src="https://p4.wallpaperbetter.com/wallpaper/123/76/21/minimalism-gradient-pink-orange-wallpaper-preview.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+        <img class="bd-placeholder-img opacity-10" width="100%" height="100%" src="http://cdn26.us1.fansshare.com/photo/darkwallpapers/dark-color-hd-background-dark-colour-wallpapers-1561678654.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+
 
           <div class="container">
             <div class="carousel-caption">
               <h1>The Ultimate React Native Series</h1>
               <p>Everything you need to build and distribute professional-quality apps with React Native.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Learn more</a></p>
+              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Learn more</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="bd-placeholder-img" width="100%" height="100%" src="https://ak.picdn.net/shutterstock/videos/1012174943/thumb/1.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <img class="bd-placeholder-img" width="100%" height="100%" src="https://c4.wallpaperflare.com/wallpaper/302/444/11/matrix-desktop-backgrounds-wallpaper-preview.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
 
           <div class="container">
             <div class="carousel-caption text-end">
               <h1>The Ultimate Redux Course</h1>
               <p>Go from beginner to expert in 6 hours. Everything you need to build modern apps with Redux.</p>
-              <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Browse gallery</a></p>
+              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Browse gallery</a></p>
             </div>
           </div>
         </div>
@@ -67,6 +69,7 @@
         <x-eventCard :event='$event' />
         @endforeach
         <!--foreachend-->
+
       </div><!-- /.row -->
     </div>
 
@@ -107,3 +110,16 @@
   </main>
     <x-footer />
     @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
