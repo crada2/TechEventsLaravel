@@ -28,4 +28,9 @@ Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events
 
 Auth::routes();
 
+//Admin routes
+Route::get('/dashboard', function(){
+    return view('admin.index');
+})->name('admin.index')->middleware('Admin');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

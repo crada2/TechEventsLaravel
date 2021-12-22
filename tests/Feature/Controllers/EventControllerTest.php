@@ -27,16 +27,4 @@ class EventControllerTest extends TestCase
                 ->assertRedirect("/login");
     }         
 
-
-    public function test_user_auth_can_inscription()
-    {
-        $event = Event::factory()->create();
-        $user = User::factory()->create();
-        
-        $this->actingAs($user);
-        $response = $this->get(route('home',$event->id));
-
-        $this->assertEquals($user->id,$event->user[0]->id);
-    }   
-
 }
