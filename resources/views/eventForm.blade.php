@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputText1">DATE</label>
-                  <input name="date_time" type="date_time" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+                  <input name="date_time" type="datetime-local" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
               </form>
@@ -35,6 +35,7 @@
     </div>
   </main>
 
+  
   <x-footer />
 @endsection
 

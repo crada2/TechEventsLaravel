@@ -46,6 +46,8 @@ class EventController extends Controller
            'text' => $request->text,
            'date_time' => $request->date_time,
            'user_id' => Auth::user()->id
+         
+        
        ];
        //$data =$request->all();
         //dd($request->hasFile('img'));

@@ -26,16 +26,18 @@
     <!--<script src="{{asset('events-css/bootstrap.bundle.min.js')}}" ></script> -->
    <!-- <script src="./plantillaBoostrap_html_files/bootstrap.bundle.min.js" ></script> -->
    @auth
-        <section class="alert alert-secondary">
-         <a class="btn btn-outline-primary" href="{{ route('events.create') }}">New Instant</a>
+        <section class="alert alert-secondary d-flex justify-content-center ">
+       
             
-         <a class="btn btn-outline-primary" href="{{ route('home') }}">My Instants</a>
+         <a class="btn btn-outline-primary" href="{{ route('home') }}">My courses</a>
         </section>
        
     @endauth
     
     <div id="app">
             @yield('content')
+
+            
             
     </div>
 </body>

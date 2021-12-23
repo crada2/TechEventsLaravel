@@ -53,3 +53,25 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+
+
+
+
+//investigando paquete Carbon
+use Carbon\Carbon;
+//echo"<pre>";
+//var_dump(DateTimeZone::listIdentifiers());
+  date_default_timezone_set("Europe/Andorra");
+  Carbon::setLocale ('es'); 
+
+  //echo Carbon::now()-> toDateTimeString(); 
+
+  $fecha = Carbon::now()->toFormattedDateString(); //https://ulaav.com/blog/desarrollo-web/manipulacin-de-fechas-con-carbon
+  echo $fecha;
+  //echo '  .otra funcion de fecha creada manual:    ';
+
+  //$prueba = new Carbon ('2016-10-12 09:45:32 ');
+  
+  //echo $prueba->diffForHumans(); //funcion: hace tanto tiempo
+
+
