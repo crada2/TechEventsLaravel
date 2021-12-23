@@ -75,12 +75,16 @@
 
     <!-- START THE FEATURETTES -->
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider ">
 
-    <div class="row featurette">
+    <div class="row featurette d-flex justify-content-around">
       <div class="col-md-7">
-        <h2 class="featurette-heading">MASTER A TOP CODER MINDSET. <span class="text-muted">Learn from a True Expert.</span></h2>
-        <p class="lead">Benefit from Mosh's two decades of experience in the industry. Not only does he explain the whats, whys, and hows, he also shares tons of tips and tricks that help you code faster and with more confidence. Something that would take you years to learn on the job.</p>
+        <h2 class="featurette-heading ">
+
+Businesses large and small trust <b>Tech-Events</b> 
+
+to scale their business. <span class="text-muted">Learn from a True Expert.</span></h2>
+        
       </div>
       <div class="col-md-5">
         <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://codewithmosh-assets.netlify.app/why-expert.4b07f585.png" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -89,19 +93,7 @@
       </div>
     </div>
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">WORLD-CLASS QUALITY VIDEOS. <span class="text-muted">Fun and Engaging Lessons.</span></h2>
-        <p class="lead">Mosh is a perfectionist and is fully obsessed with the quality of his videos. Beautiful graphics, slides, and animations help you stay focused, remember, and better understand the materials.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://codewithmosh-assets.netlify.app/why-engaging.0b5dcedd.png" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-      </div>
-    </div>
-
+    
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
