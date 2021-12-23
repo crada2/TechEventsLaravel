@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 });*/
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
-Route::get('/events/create', [EventController::class, 'create'])->name('events.create')->middleware('auth');
+Route::get('/events/create', [EventController::class, 'create'])->name('events.create')->middleware('Admin');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
 

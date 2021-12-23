@@ -92,15 +92,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-
-        $eventToDelete = Event::findOrFail($id);
-        if (Auth::id() != $eventToDelete->author->id)
-        {
-            return back();
-        }
-
-        $eventToDelete->delete();
-      //  Event::destroy(($id));
+       // $eventToDelete = Event::findOrFail($id);
+      //  $eventToDelete->delete();
+        Event::destroy(($id));
         return back();
     }
 }

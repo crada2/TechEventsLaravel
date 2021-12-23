@@ -16,8 +16,9 @@ class Admin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-    {      if(!Auth::user()) return redirect(route('login'));
-           if(Auth::user()->isAdmin) return $next($request);
-           return back();
+    {      
+        if(!Auth::user()) return redirect(route('login'));
+        if(Auth::user()->isAdmin) return $next($request);
+        return redirect(route('landing'));
     }
 }

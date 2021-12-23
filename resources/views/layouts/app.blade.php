@@ -24,7 +24,7 @@
 <body>
     @auth
         <section>
-         <a href="{{ route('events.create') }}">New Instant</a>
+        <a href="{{ route('events.create') }}">New Instant</a>
             /
          <a href="#">My Instants</a>
         </section>
