@@ -23,20 +23,24 @@
 
 </head>
 <body>
-    @auth
-        <section>
-         <a href="{{ route('events.create') }}">New Instant</a>
-            /
-         <a href="#">My Instants</a>
-        </section>
-    @endauth
-    <div id="app">
-            @yield('content')
-    </div>
+
     <!--<script src="{{asset('events-css/bootstrap.bundle.min.js')}}" ></script> -->
    <!-- <script src="./plantillaBoostrap_html_files/bootstrap.bundle.min.js" ></script> -->
+   @auth
+        <section class="alert alert-secondary d-flex justify-content-center ">
 
 
+         <a class="btn btn-outline-primary" href="{{ route('home') }}">My courses</a>
+        </section>
+
+    @endauth
+
+    <div id="app">
+            @yield('content')
+
+
+
+    </div>
 </body>
 
 </html>

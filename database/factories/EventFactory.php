@@ -20,6 +20,8 @@ class EventFactory extends Factory
             'text' => $this->faker-> realtext(),
             'date_time' => $this->faker-> dateTime(),
             'user_id' => User::all()->random()
+            
+
         ];
     }
 }

@@ -23,10 +23,9 @@
                   <label for="exampleInputText1">DESCRIPTION</label>
                   <input name="text" type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
                 </div>
-
-                <div class="form-group mt-2">
-                    <label for="exampleInputText1">DATE</label>
-                    <input name="date_time" type="date_time" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+                <div class="form-group">
+                  <label for="exampleInputText1">DATE</label>
+                  <input name="date_time" type="datetime-local" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
               </form>
@@ -35,6 +34,7 @@
       </div>
     </div>
   </main>
+
 
   <x-footer />
 @endsection
