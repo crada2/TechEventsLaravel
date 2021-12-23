@@ -34,8 +34,7 @@
       </div>
     </div>
   </main>
-
-
   <x-footer />
 @endsection
+
 
