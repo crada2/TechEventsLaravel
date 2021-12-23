@@ -47,15 +47,20 @@ class EventController extends Controller
            'date_time' => $request->date_time,
            'user_id' => Auth::user()->id
        ];
-       //$data =$request->all();
+       $data =$request->all();
         //dd($request->hasFile('img'));
-        if( $request->hasFile('img') ) {
-            $file = $request->file('img');
-            $destinationPath = 'featured/images/';
-            $filename = $file->getClientOriginalName();
-            $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
-            $img = $destinationPath . $filename;
+        if($request->hasFile('img'))
+        {
+            $destination_path ='public/image/event';
+            $img = $request->file('img');
+            $imgName = $img->getClientOriginalName();
+            $path = $request->file('img')->storeAs($destination_path, $imgName);
+
+            $data['img'] = $imgName;
+
         }
+
+        //dd($request->all());
 
        Event::create($data);
        return redirect(route('landing'));

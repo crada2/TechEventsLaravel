@@ -20,6 +20,7 @@
     <link href="{{asset('events-css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('events-css/carousel.css')}}" rel="stylesheet"> <!-- link boostrap??????-->
+
 </head>
 <body>
     @auth
@@ -34,5 +35,8 @@
     </div>
     <!--<script src="{{asset('events-css/bootstrap.bundle.min.js')}}" ></script> -->
    <!-- <script src="./plantillaBoostrap_html_files/bootstrap.bundle.min.js" ></script> -->
+
+
 </body>
+
 </html>
