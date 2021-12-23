@@ -18,7 +18,7 @@
             <div class="carousel-caption text-start">
               <h1>The Ultimate Docker Course</h1>
               <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
-              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Sign up today</a></p>
+              <p><a class="btn btn-outline-light" href="{{route('home') }}">Sign up today</a></p>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
             <div class="carousel-caption">
               <h1>The Ultimate React Native Series</h1>
               <p>Everything you need to build and distribute professional-quality apps with React Native.</p>
-              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Learn more</a></p>
+              <p><a class="btn btn-outline-light" href="{{route('home') }}">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="carousel-caption text-end">
               <h1>The Ultimate Redux Course</h1>
               <p>Go from beginner to expert in 6 hours. Everything you need to build modern apps with Redux.</p>
-              <p><a class="btn btn-outline-light" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Browse gallery</a></p>
+              <p><a class="btn btn-outline-light" href="{{route('home') }}">Browse gallery</a></p>
             </div>
           </div>
         </div>
