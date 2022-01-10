@@ -11,7 +11,7 @@
                 @csrf 
                 <button type="submit" class="btn btn-outline-danger">Edit</button>
             </form>
-            <form class="card-text p-3 mb-2 bg-light text-dark" action="/events/{{ $event->id }}" method="POST">
+            <form  action="/events/{{ $event->id }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-outline-danger">Delete</button> 
