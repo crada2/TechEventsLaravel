@@ -23,11 +23,6 @@
 
 </head>
 <body>
-    @auth
-        <section class="alert alert-secondary d-flex justify-content-center "> 
-            <a class="btn btn-outline-primary" href="{{ route('home') }}">My courses</a>
-       </section>
-    @endauth
     <div id="app">
             @yield('content')
     </div>

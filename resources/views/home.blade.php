@@ -1,5 +1,12 @@
 @extends('layouts.app')
 <x-header />
+    @auth
+        <section class="alert alert-secondary d-flex justify-content-around"> 
+            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+       </section>
+    @endauth
 @section('content')
     <div class="container ">
         <div class="row justify-content-center">

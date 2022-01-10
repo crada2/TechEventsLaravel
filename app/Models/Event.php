@@ -15,12 +15,11 @@ class Event extends Model
         'text',
         'date_time',
         'user_id'
-        
     ];
 
     //Eloquent relations
     public function author() {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsToMany(User::class);
     }
   
 }

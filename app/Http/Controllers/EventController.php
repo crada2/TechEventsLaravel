@@ -28,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-       return view('eventForm');
+       return view('admin.eventForm');
     }
 
     /**
@@ -39,18 +39,8 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-       $data = [
-
-           'title' => $request->title,
-           'img' => $request->img,
-           'text' => $request->text,
-           'date_time' => $request->date_time,
-           'user_id' => Auth::user()->id
-         
-        
-       ];
-       $data =$request->all();
-        //dd($request->hasFile('img'));
+        $data = $request->all();
+   
         if($request->hasFile('img'))
         {
             $destination_path ='public/image/event';
@@ -59,13 +49,10 @@ class EventController extends Controller
             $path = $request->file('img')->storeAs($destination_path, $imgName);
 
             $data['img'] = $imgName;
-
         }
 
-        //dd($request->all());
-
        Event::create($data);
-       return redirect(route('landing'));
+       return redirect(route('admin.index'));
     }
 
     /**
@@ -74,9 +61,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
-        //
+        $event = Event::find($id);
+        return view('show', ['event'=> $event]);
     }
 
     /**
@@ -85,9 +73,10 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $eventToEdit=Event::find($id);
+        return view('admin.editEventform', ['event'=> $eventToEdit]);
     }
 
     /**
@@ -97,9 +86,31 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventRequest $request, Event $event)
+    public function update(Request $request, $id)
     {
-        //
+
+        $eventToUpdate = Event::find($id);
+    
+        $img = null;
+   
+        if($request->hasFile('img'))
+        {
+            $destination_path ='public/image/event';
+            $img = $request->file('img');
+            $imgName = $img->getClientOriginalName();
+            $path = $request->file('img')->storeAs($destination_path, $imgName);
+
+            $img = $imgName;
+        }
+
+        if ($img) $eventToUpdate->img = $img;
+        $eventToUpdate->title= $request->input('title'); 
+        $eventToUpdate->date_time = $request->input('date_time');
+        $eventToUpdate->text = $request->input('text');
+
+        $eventToUpdate->save();
+
+        return redirect(route('admin.index'));
     }
 
     /**

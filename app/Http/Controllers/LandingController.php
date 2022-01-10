@@ -11,4 +11,9 @@ class LandingController extends Controller
         $events = Event::all();
         return view('landing', ['events'=>$events]);
     }
+
+    public function admin(){
+        $events= Event::all();
+        return view('admin.index', ['events' => $events]);
+    }
 }

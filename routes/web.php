@@ -23,14 +23,15 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/events/create', [EventController::class, 'create'])->name('events.create')->middleware('Admin');
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
+Route::get('/show/{id}', [EventController::class, 'show'])->name('show');
 Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
+Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
+Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
 
 Auth::routes();
 
 //Admin routes
-Route::get('/dashboard', function(){
-    return view('admin.index');
-})->name('admin.index')->middleware('Admin');
+Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
