@@ -144,7 +144,7 @@ class EventController extends Controller
     {
         $user = User::find(Auth::id());
         $event = Event::find($id);
-        $usercount = Event::checkEventVacancy($event);
-        $inscribed = Event::checkInscription($user, $event);
+        $totalusers = Event::eventVacancy($event);
+        $inscription = Event::checkEnrollment($user, $event);
     }
 }
