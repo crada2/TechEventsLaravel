@@ -146,5 +146,10 @@ class EventController extends Controller
         $event = Event::find($id);
         $totalusers = Event::eventVacancy($event);
         $inscription = Event::checkEnrollment($user, $event);
+
+        if ($totalusers < $event->users_max && !$inscription) {
+            $user->event()->attach($event);
+        }
+        return redirect()->route('landing');
     }
 }
