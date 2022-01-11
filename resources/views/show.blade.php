@@ -1,12 +1,4 @@
 
-<?php
-use Carbon\Carbon;
-use Carbon\CarbonTimeZone;
-
-$timeZone = CarbonTimeZone::create('Europe/Madrid');
-$date = Carbon::now($timeZone);
-
-?>
 
 
 
@@ -16,7 +8,7 @@ $date = Carbon::now($timeZone);
 <x-header/>
 
 
-@if ($event->date_time > $date)
+
 
 
 <div class="d-flex justify-content-center">
@@ -37,5 +29,5 @@ $date = Carbon::now($timeZone);
     </div>
 </div>
 
-@endif
+
 @endsection

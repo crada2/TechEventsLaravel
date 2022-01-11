@@ -1,4 +1,5 @@
 
+
 @foreach ($events as $event)
 
 <div class="card border-light" style="width: 18rem;">
