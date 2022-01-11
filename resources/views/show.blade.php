@@ -1,7 +1,24 @@
+
+<?php
+use Carbon\Carbon;
+use Carbon\CarbonTimeZone;
+
+$timeZone = CarbonTimeZone::create('Europe/Madrid');
+$date = Carbon::now($timeZone);
+
+?>
+
+
+
 @extends('layouts.app')
 
 @section('content')
 <x-header/>
+
+
+@if ($event->date_time > $date)
+
+
 <div class="d-flex justify-content-center">
     <div class="card border-light" style="width: 18rem;">
         <img src="{{asset('/storage/image/event/'.$event->img)}}"  class="border border-5 rounded-3" alt="Card image cap">
@@ -19,4 +36,6 @@
     </div>
     </div>
 </div>
+
+@endif
 @endsection
