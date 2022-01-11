@@ -1,13 +1,13 @@
 @extends('layouts.app')
 <x-header />
 
-    @auth
+      @if(Auth::user())
         <section class="alert alert-secondary d-flex justify-content-around"> 
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+           <!-- <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a> -->
+            <a class="btn btn-outline-secondary" href="{{ route('home', $event->id) }}">My Courses</a>
+           <!-- <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a> -->
        </section>
-    @endauth
+      @endif
 
 @section('content')
 

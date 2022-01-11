@@ -34,4 +34,4 @@ Auth::routes();
 //Admin routes
 Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
