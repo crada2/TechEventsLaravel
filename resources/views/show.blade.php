@@ -1,16 +1,8 @@
 
-
-
-
 @extends('layouts.app')
 
 @section('content')
 <x-header/>
-
-
-
-
-
 <div class="d-flex justify-content-center">
     <div class="card border-light" style="width: 18rem;">
         <img src="{{asset('/storage/image/event/'.$event->img)}}"  class="border border-5 rounded-3" alt="Card image cap">
