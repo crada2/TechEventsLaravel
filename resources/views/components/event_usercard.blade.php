@@ -10,6 +10,7 @@
         <div class="d-flex justify-content-around">
           <a type="submit" class="btn btn-outline-success"  href="{{route('home') }}">Enroll in Course</a>
           <a type="submit" class="btn btn-outline-info"  href="{{route('show',  ['id'=>$event->id]) }}">View</a>
+          <!-- falta un boton -->
         </div>
       </div>
   </div>
