@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,19 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::all()
+        ->sortBy('date_time');
+
+        $myeventuser = [];    
+        if (Auth::user()) {
+            $user=Auth::user();
+            $myeventuser = $user->event;
+        }
+
+        $events = Event::totalEnrollees($events);
+        $events = Event::ifEnrolled($events, $myeventuser);
+    
+        return view('landing', ['events' => $myeventuser]);
     }
 
     /**
@@ -125,5 +138,13 @@ class EventController extends Controller
       //  $eventToDelete->delete();
         Event::destroy(($id));
         return back();
+    }
+
+    public function enroll($id)
+    {
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+        $usercount = Event::checkEventVacancy($event);
+        $inscribed = Event::checkInscription($user, $event);
     }
 }
