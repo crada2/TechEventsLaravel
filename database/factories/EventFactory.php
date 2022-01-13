@@ -20,8 +20,6 @@ class EventFactory extends Factory
             'text' => $this->faker-> realtext(),
             'date_time' => $this->faker-> dateTime(),
             'users_max' => $this->faker-> numberBetween(10,20)
-            
-
         ];
     }
 }

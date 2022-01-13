@@ -19,19 +19,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all()
-        ->sortBy('date_time');
-
-        $myeventuser = [];    
-        if (Auth::user()) {
-            $user=Auth::user();
-            $myeventuser = $user->event;
-        }
-
-        $events = Event::totalEnrollees($events);
-        $events = Event::ifEnrolled($events, $myeventuser);
-    
-        return view('landing', ['events' => $myeventuser]);
+         //
     }
 
     /**

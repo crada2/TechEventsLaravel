@@ -40,7 +40,7 @@ class Event extends Model
     static function totalEnrollees($events) 
     {
         $events=Event::withCount('user')->get();
-        return ($events);
+        return $events;
     }
 
     static function eventVacancy($event) 
@@ -65,6 +65,7 @@ class Event extends Model
                 return $inscription;
             }
         }
+        return false;
     }
 
   

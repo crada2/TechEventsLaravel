@@ -15,8 +15,10 @@
             </div>
       </div>
       <div class="float-right">
-        <a class="btn btn-outline-info" href="{{ route('landing') }}">↩️</a>
+        <a class="btn btn-outline-light" href="{{ route('landing') }}">↩️</a>
     </div>
     </div>
 </div>
+
+
 @endsection

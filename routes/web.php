@@ -34,4 +34,6 @@ Auth::routes();
 //Admin routes
 Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
 
-Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
+Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');
