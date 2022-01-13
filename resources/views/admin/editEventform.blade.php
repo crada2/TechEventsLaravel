@@ -25,6 +25,10 @@
                   <label for="exampleInputText1">DATE</label>
                   <input name="date_time" type="datetime-local" class="form-control" id="exampleInputText1" aria-describedby="emailHelp" value="{{$event->date_time}}">
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputText1">PLACES</label>
+                  <input name="users_max" type="number" class="form-control" id="exampleInputText1" aria-describedby="emailHelp" value="{{$event->users_max}}">
+                </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </form>
             </div>
