@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -15,8 +14,8 @@
                 <a type="submit" class="btn btn-outline-success"  href="{{route('home') }}">Enroll in Course</a>
             </div>
       </div>
-      <div class="d-flex justify-content-center">
-        <a class="btn btn-outline-info" href="{{ route('landing') }}">↩️</a>
+      <div class="float-right">
+        <a class="btn btn-outline-light" href="{{ route('landing') }}">↩️</a>
     </div>
     </div>
 </div>

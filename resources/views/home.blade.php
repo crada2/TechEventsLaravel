@@ -31,7 +31,18 @@
                     @endif
 
                     <br>    
-                       
+                        <div class="container">  
+                             <!-- foreach para recorrer eventos con ee id e imprimirlos -->
+                            <div class="card-header d-flex justify-content-around"  >
+                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
+                                     <!--foreach-->
+                                    @foreach ($events as $event)
+                                        <x-event_usercard :event='$event' />
+                                    @endforeach
+                                     <!--foreachend-->
+                                    <br>
+                                </div>
+                            </div>
                             <br>
                                 <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My certificates') }} </h3>
                             <br>

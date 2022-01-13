@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -24,13 +25,37 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $events = [];    
+        $events = [];   
+
         if (Auth::user()) {
             $user = Auth::user();
-            $events = $user->events;
+            $events = $user->event;
         }
 
-        return view('home', ['events'=> $events]);
+        return view('home', ['events' => $events]);
+    }
+
+    public function enroll($id) {
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+
+        $totalusers = Event::eventVacancy($event);
+        $inscription = Event::checkEnrollment($user, $event);
+
+        if ($totalusers < $event->users_max && !$inscription) {
+            $user->event()->attach($event);
+        }
+
+        return redirect()->route('home'); 
+    }
+
+    public function unsubscribe($id) {
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+        
+        $user->event()->detach($event);
+        
+        return redirect()->route('home');
     }
    /*  public function userCourses(){
         $events= Event::orderBy('date_time', 'DESC')->get();

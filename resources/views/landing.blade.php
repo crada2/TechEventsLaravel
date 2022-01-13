@@ -77,9 +77,9 @@
 
     <div class="container">  <!-- containers de articulos destacados -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
-        <!--foreach-->
-        @include('components.eventCard')
-        <!--foreachend-->
+        @foreach ($events as $event)
+            <x-eventCard :event='$event' />
+        @endforeach
 
       </div><!-- /.row -->
     </div>
@@ -100,7 +100,6 @@
       </div>
     </div>
 
-    
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->

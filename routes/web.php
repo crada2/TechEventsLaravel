@@ -40,4 +40,5 @@ Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
+Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');

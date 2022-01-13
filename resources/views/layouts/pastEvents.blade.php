@@ -7,11 +7,6 @@ $date = Carbon::now($timeZone);
 ?>
 
 
-@extends('layouts.app')
-@section('content')
-
-
-<x-header />
 
 <section class="alert alert-secondary d-flex justify-content-around">  
   <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
@@ -34,6 +29,6 @@ $date = Carbon::now($timeZone);
       </div>
 </div>
 @endif
-<x-footer />
+@endforeach
 
-@endsection
+
