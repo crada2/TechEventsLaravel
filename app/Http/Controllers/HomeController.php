@@ -24,8 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        $events = [];    
+         $events = [];    
         if (Auth::user()) {
             $user = Auth::user();
             $events = $user->events;
@@ -33,4 +32,8 @@ class HomeController extends Controller
 
         return view('home', ['events'=> $events]);
     }
+   /*  public function userCourses(){
+        $events= Event::orderBy('date_time', 'DESC')->get();
+        return view('home', ['events' => $events]);
+    } */
 }

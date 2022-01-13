@@ -1,12 +1,11 @@
 @extends('layouts.app')
+@auth
 <x-header />
-    @auth
+   
         <section class="alert alert-secondary d-flex justify-content-around"> 
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
        </section>
-    @endauth
+  
 @section('content')
     <div class="container ">
         <div class="row justify-content-center">
@@ -21,25 +20,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h3 class="text-decoration-underline d-flex justify-content-around">✰ {{ __('My courses') }} </h3>
-                    ( user_id: {{ Auth::user()->id }} )
+                    <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My courses') }} </h3>
+                    
+
+                    <!--imprimo cards del mismo usuario-->
+                    @if (Auth::user()->id )
+                    
+                        cards con id usuario 
+                   
+                    @endif
+
                     <br>    
-                        <div class="container">  
-                             <!-- foreach para recorrer eventos con ee id e imprimirlos -->
-                            <div class="card-header d-flex justify-content-around"  >
-                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
-                                     <!--foreach-->
-                                    @foreach ($events as $event)
-                                    <x-eventCard :event='$event' />
-                                    @endforeach
-                                     <!--foreachend-->
-                                    <br>
-                                </div>
-                            </div>
+                       
                             <br>
-                                <h3 class="text-decoration-underline d-flex justify-content-around">✰ {{ __('My certificates') }} </h3>
+                                <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My certificates') }} </h3>
                             <br>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -48,3 +44,4 @@
 
 
 @endsection
+@endauth

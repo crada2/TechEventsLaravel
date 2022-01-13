@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PastEventsController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -29,9 +31,13 @@ Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
 
+Route::get('/pastEvents', [EventController::class, 'pastEvents'])->name('pastEvents');
+
 Auth::routes();
 
 //Admin routes
 Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

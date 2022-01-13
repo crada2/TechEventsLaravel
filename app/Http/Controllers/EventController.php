@@ -126,4 +126,9 @@ class EventController extends Controller
         Event::destroy(($id));
         return back();
     }
+
+      public function pastEvents() {
+        $events = Event::orderBy('date_time', 'ASC')->get();
+        return view('pastEvents', ['events'=>$events]);
+    } 
 }

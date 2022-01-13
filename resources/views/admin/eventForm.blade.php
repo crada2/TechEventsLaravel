@@ -3,7 +3,9 @@
 @section('content')
 
   <x-header />
-
+  <section class="alert alert-secondary d-flex justify-content-around">  
+    <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
+  </section>
   <main>
     <div class="container">
       <div class="album py-5 bg-light">

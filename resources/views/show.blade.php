@@ -15,7 +15,7 @@
                 <a type="submit" class="btn btn-outline-success"  href="{{route('home') }}">Enroll in Course</a>
             </div>
       </div>
-      <div class="float-right">
+      <div class="d-flex justify-content-center">
         <a class="btn btn-outline-info" href="{{ route('landing') }}">↩️</a>
     </div>
     </div>

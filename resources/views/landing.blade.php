@@ -3,17 +3,18 @@
 
     @auth
       @if (Auth::user()->name == 'Admin')
-        <section class="alert alert-secondary d-flex justify-content-around"> 
-          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+        <section class="alert alert-secondary d-flex justify-content-around">  
+          <a class="btn btn-outline-secondary" href="{{ route('pastEvents') }}">Past Courses</a>
           <a class="btn btn-outline-secondary" href="{{ route('admin.index') }}">My Dashboard</a>
-          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
         </section>
         @endif
         @if (Auth::user()->name != 'Admin')
           <section class="alert alert-secondary d-flex justify-content-around"> 
-              <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
-              <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-              <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('pastEvents') }}">Past Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+             
         </section>
         @endif
     @endauth
