@@ -15,7 +15,6 @@ class Event extends Model
         'text',
         'date_time',
         'users_max',
-        'ifEnrolled'
     ];
 
     //Eloquent relations
@@ -23,35 +22,20 @@ class Event extends Model
     {
         return $this->belongsToMany(User::class);
     }
-
-    static function ifEnrolled($events, $myeventuser) 
-    {
-        foreach ($events as $event) {
-            foreach ($myeventuser as $myevent){
-
-                if ($event->id === $myevent->id){
-                    $event->ifEnrolled = "1";
-                }
-            }    
-        }
-        return ($events);
-    }
-
+    
     static function totalEnrollees($events) 
     {
-        $events=Event::withCount('user')->get();
+        $events = Event::withCount('user')->get();
         return $events;
     }
 
     static function eventVacancy($event) 
     {
-        $totalusers = Event::totalEnrollees($event);
-
-        foreach ($totalusers as $item) {
-
+        $usercount = Event::totalEnrollees($event);
+        foreach ($usercount as $item) {
             if ($item->id === $event->id) {                
-                $totalusers = $item->user_count;
-                return $totalusers;
+                $usercount = $item->user_count; 
+                return $usercount;
             }
         }
     }
@@ -59,14 +43,15 @@ class Event extends Model
     static function checkEnrollment($user, $event) 
     {
         foreach ($user->event as $inscriptionEvent) {
-
             if ($event->id === $inscriptionEvent->id) {
                 $inscription = true;
+                var_dump($inscription);
                 return $inscription;
+               
             }
         }
         return false;
     }
+    
 
-  
 }

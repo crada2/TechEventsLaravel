@@ -31,7 +31,6 @@ class HomeController extends Controller
             $user = Auth::user();
             $events = $user->event;
         }
-
         return view('home', ['events' => $events]);
     }
 
