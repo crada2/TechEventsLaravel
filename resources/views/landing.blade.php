@@ -40,7 +40,7 @@ $date = Carbon::now($tz);
           <img class="bd-placeholder-img" width="100%" height="100%" src="https://2.bp.blogspot.com/-6NxUmY-aZp8/UYfiaj_9o9I/AAAAAAAABV0/alUMUycPe5o/s1600/Fondo+HD+para+bajar+-+WiriWiri_info+-+(90).png" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>The Ultimate Docker Course</h1>
+                <h1>The Ultimate Docker Coursee</h1>
                 <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
                 <p><a class="btn btn-outline-light" href="{{route('home') }}">Sign up today</a></p>
               </div>
