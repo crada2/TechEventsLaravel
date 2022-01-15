@@ -41,7 +41,7 @@ $date = Carbon::now($tz);
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1>The Ultimate Docker Coursee</h1>
-                <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
+                <p>Everything you need to master Docker In one clear, concise, and practical course.</p>
                 <p><a class="btn btn-outline-light" href="{{route('home') }}">Sign up today</a></p>
               </div>
             </div>
