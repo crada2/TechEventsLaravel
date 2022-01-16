@@ -3,13 +3,13 @@
 @section('content')
 <x-header/>
 
-<div></div>
-<div class=" d-flex justify-content-center">
+<div class="p-3 d-flex justify-content-center">
+<div class="p-3 d-flex justify-content-center">
 
-    <div  style="width: 10rem;">
-        <img class='rounded-pill opacity-25'src="{{asset('/storage/image/event/'.$event->img)}}"  class="border border-2 rounded-3" alt="Card image cap">
+    <div  class="p-3 d-flex justify-content-center"  style="width: 10rem;">
+        <img class='rounded-3 opacity-25'src="{{asset('/storage/image/event/'.$event->img)}}"   alt="Card image cap">
     </div>
-
+ 
 
 
         <div class=" p-3 rounded-pill card border-light d-flex" style="width: 60rem;">
@@ -40,7 +40,8 @@
         </div>
 
     </div>
-
+    
+    </div>
 
 
 @endsection
