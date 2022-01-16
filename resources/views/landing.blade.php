@@ -118,7 +118,7 @@ $date = Carbon::now($tz);
    
     <!-- eventos futuros -->
 
-    <hr class="featurette-divider ">
+ 
     <h2 class="row featurette d-flex justify-content-center">Próximos cursos</h2>
     <br><br>
     <div class="row featurette d-flex justify-content-around">
