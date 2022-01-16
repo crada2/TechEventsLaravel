@@ -3,18 +3,14 @@
 @section('content')
 <x-header/>
 
-<div class="p-3 d-flex justify-content-center">
-<div class="p-3 d-flex justify-content-center">
+<div class="p-3  d-flex flex-column justify-content-center">
+<div  class="d-flex rounded-pill justify-content-center">
+        <img class='position-absolute d-flex rounded-pill opacity-25'src="{{asset('/storage/image/event/'.$event->img)}}"  style="width: 68rem;"  alt="Card image cap">
+        </div>
+<div class="d-flex justify-content-center">
+        <div class="rounded-3 card border-light" style="width: 30rem;">
 
-    <div  class="p-3 d-flex justify-content-center"  style="width: 10rem;">
-        <img class='rounded-3 opacity-25'src="{{asset('/storage/image/event/'.$event->img)}}"   alt="Card image cap">
-    </div>
- 
-
-
-        <div class=" p-3 rounded-pill card border-light d-flex" style="width: 60rem;">
-
-        <div class="d-flex  flex-column justify-content-center card-body">
+        <div class="position-relative d-flex  flex-column justify-content-center card-body">
                 <h2><b class="card-text d-flex justify-content-center">{{$event->title}}</b> </h2>
                 <p class=" d-flex justify-content-center "><i> ⭐ ⭐ ⭐ ⭐  {{ $event->name }}</i> </p>
                 <p class="card-text d-flex justify-content-center ">{{$event->text}}</p>
@@ -37,6 +33,7 @@
                 
                     <div class=" d-flex justify-content-center " ><a class="rounded-pill btn btn-outline-light  p-3 mb-3 bg-light" style="width: 7rem;" href="{{ route('landing') }}">↩️</a></div>    
         </div>
+        
         </div>
 
     </div>
