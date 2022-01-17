@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->boolean('ifRegistered')->nullable();
             $table->foreignId('user_id')->nullable()->default(null);
             $table->timestamps();
+            //$table->string('link')->default(null);
         });
     }
 

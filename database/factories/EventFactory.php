@@ -19,8 +19,8 @@ class EventFactory extends Factory
             'img' => $this->faker-> imageUrl(),
             'text' => $this->faker-> realtext(),
             'date_time' => $this->faker-> dateTime(),
-            'user_id' => User::all()->random()
-            
+            'user_id' => User::all()->random(),
+            //'link' => $this->faker->url()
 
         ];
     }

@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+//use App\Mail\SendCourse;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\RegisterCourse;
+use App\Models\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +36,7 @@ Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events
 Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
+//Route::post('/events/email/{id}', [SendController::class,'email'])->name('email');
 
 Auth::routes();
 
@@ -35,3 +44,44 @@ Auth::routes();
 Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/profile', function () {
+    // Only verified users may access this route...
+})->middleware('verified');
+
+/*Route::get('/send', function () {
+
+    $correo = new SendCourse;
+    Mail::to('carbel.cecilia@gmail.com')->send($correo);//::send(new SendCourse)
+
+    return "Msj enviado";
+});
+/*Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+*/
+
+/*Route::get('notificacion', function () {
+    $user = User::find(7);
+    $user->notify(new RegisterCourse());
+
+    return "Notificación enviada";
+});*/
