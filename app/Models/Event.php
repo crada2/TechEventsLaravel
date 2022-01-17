@@ -14,8 +14,7 @@ class Event extends Model
         'img',
         'text',
         'date_time',
-        'users_max',
-        'ifEnrolled'
+        'users_max'
     ];
 
     //Eloquent relations
@@ -24,18 +23,6 @@ class Event extends Model
         return $this->belongsToMany(User::class);
     }
 
-    static function ifEnrolled($events, $myeventuser) 
-    {
-        foreach ($events as $event) {
-            foreach ($myeventuser as $myevent){
-
-                if ($event->id === $myevent->id){
-                    $event->ifEnrolled = "1";
-                }
-            }    
-        }
-        return ($events);
-    }
 
     static function totalEnrollees($events) 
     {
@@ -45,13 +32,13 @@ class Event extends Model
 
     static function eventVacancy($event) 
     {
-        $totalusers = Event::totalEnrollees($event);
+        $usercount = Event::totalEnrollees($event);
 
-        foreach ($totalusers as $item) {
+        foreach ($usercount as $item) {
 
             if ($item->id === $event->id) {                
-                $totalusers = $item->user_count;
-                return $totalusers;
+                $usercount = $item->user_count;
+                return $usercount;
             }
         }
     }
