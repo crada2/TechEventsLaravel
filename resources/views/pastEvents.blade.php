@@ -1,10 +1,16 @@
-
 <?php
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
 $timeZone = CarbonTimeZone::create('Europe/Madrid');
 $date = Carbon::now($timeZone);
 ?>
+
+
+@extends('layouts.app')
+@auth
+<x-header />
+
+
 
 
 

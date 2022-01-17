@@ -29,8 +29,15 @@
                   <label for="exampleInputText1">DATE</label>
                   <input name="date_time" type="datetime-local" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
                 </div>
+<<<<<<< HEAD
               
                 
+=======
+                <div class="form-group">
+                  <label for="exampleInputText1">PLACES</label>
+                  <input name="users_max" type="number" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+                </div>
+>>>>>>> 36c1df11b9ea59657944026180b065123e18e83a
                 <button type="submit" class="btn btn-primary">Save</button>
               </form>
             </div>

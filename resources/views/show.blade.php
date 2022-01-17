@@ -10,13 +10,18 @@
             <p class="card-text  p-3 mb-2 bg-light text-dark d-flex justify-content-center "><i> ⭐ ⭐ ⭐ ⭐  {{ $event->name }}</i> </p>
             <p class="card-text ">{{$event->text}}</p>
             <p class="card-date"><i>{{$event->date_time}}</i> </p>
-            <div class="d-flex justify-content-around">
-                <a type="submit" class="btn btn-outline-success"  href="{{route('home') }}">Enroll in Course</a>
-            </div>
+            <b>Maximum users allowed: {{$event->users_max}}</b>
+            <hr />
+                <div class="d-flex justify-content-around">
+                    <form action="{{route('enroll', $event->id)}}" method="POST">
+                    @csrf 
+                    <button type="submit" class="btn btn-outline-success">Enroll in Course</button>
+                    </form>
+                </div>
       </div>
       <div class="float-right">
         <a class="btn btn-outline-light" href="{{ route('landing') }}">↩️</a>
-    </div>
+      </div>
     </div>
 </div>
 
