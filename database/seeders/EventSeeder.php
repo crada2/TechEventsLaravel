@@ -13,6 +13,8 @@ class EventSeeder extends Seeder
      */
     public function run()
     {
-        //
+        /*$event = Event::factory([
+
+        ])*/
     }
 }

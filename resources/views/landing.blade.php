@@ -14,14 +14,14 @@ $date = Carbon::now($tz);
         <section class="alert alert-secondary d-flex justify-content-around">  
           <a class="btn btn-outline-secondary" href="{{ route('pastEvents') }}">Past Courses</a>
           <a class="btn btn-outline-secondary" href="{{ route('admin.index') }}">My Dashboard</a>
-          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+          <a class="btn btn-outline-secondary" href="{{ route('nextEvents') }}">Next Courses</a>
         </section>
         @endif
         @if (Auth::user()->name != 'Admin')
           <section class="alert alert-secondary d-flex justify-content-around"> 
             <a class="btn btn-outline-secondary" href="{{ route('pastEvents') }}">Past Courses</a>
             <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+            <a class="btn btn-outline-secondary" href="{{ route('nextEvents') }}">Next Courses</a>
              
         </section>
         @endif
@@ -87,9 +87,9 @@ $date = Carbon::now($tz);
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
         
           @foreach ($events as $event)
-          @if ($event->date_time >= $date)
+         
               <x-eventCard :event='$event' />
-                @endif
+            
           @endforeach
       
        
@@ -99,42 +99,7 @@ $date = Carbon::now($tz);
       <br><br>
     </div>
 
-    <!-- eventos pasados -->
 
-    <hr class="featurette-divider ">
-    <h2 class="row featurette d-flex justify-content-center">Eventos pasados</h2>
-    <br><br>
-    <div class="row featurette d-flex justify-content-around">
-      <div class="col-md-7">
-      <hr>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          @include('components.pastEvents')
-        </div>
-      </div>
-      
-    </div>
-
-    <hr class="featurette-divider">
-
-   
-    <!-- eventos futuros -->
-
- 
-    <h2 class="row featurette d-flex justify-content-center">Próximos cursos</h2>
-    <br><br>
-    <div class="row featurette d-flex justify-content-around">
-      <div class="col-md-7">
-      <hr>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        @foreach ($events as $event)
-          @if ($event->date_time > $date)
-              <x-eventCard :event='$event' />
-                @endif
-          @endforeach
-        </div>
-      </div>
-      
-    </div>
 
     <hr class="featurette-divider">
 
