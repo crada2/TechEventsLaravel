@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use App\Mail\SendCourse;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
@@ -41,7 +43,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-   
+
         if($request->hasFile('img'))
         {
             $destination_path ='public/image/event';
@@ -91,9 +93,9 @@ class EventController extends Controller
     {
 
         $eventToUpdate = Event::find($id);
-    
+
         $img = null;
-   
+
         if($request->hasFile('img'))
         {
             $destination_path ='public/image/event';
@@ -105,7 +107,7 @@ class EventController extends Controller
         }
 
         if ($img) $eventToUpdate->img = $img;
-        $eventToUpdate->title= $request->input('title'); 
+        $eventToUpdate->title= $request->input('title');
         $eventToUpdate->date_time = $request->input('date_time');
         $eventToUpdate->text = $request->input('text');
         $eventToUpdate->users_max = $request->input('users_max');
@@ -128,5 +130,4 @@ class EventController extends Controller
         Event::destroy(($id));
         return back();
     }
-
 }
