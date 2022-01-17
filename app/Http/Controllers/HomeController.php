@@ -57,6 +57,7 @@ class HomeController extends Controller
         return redirect()->route('home');
     }
 
+
     public function unsubscribe($id) {
         $user = User::find(Auth::id());
         $event = Event::find($id);

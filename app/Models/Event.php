@@ -48,7 +48,6 @@ class Event extends Model
         foreach ($user->event as $inscriptionEvent) {
             if ($event->id === $inscriptionEvent->id) {
                 $inscription = true;
-                var_dump($inscription);
                 return $inscription;
             }
         }

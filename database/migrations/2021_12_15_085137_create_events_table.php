@@ -22,7 +22,9 @@ class CreateEventsTable extends Migration
             $table->dateTime('date_time');
             $table->boolean('ifEnrolled')->nullable();
             $table->foreignId('user_id')->nullable()->default(null);
+            $table->integer('totalEnrollees')->default(0);
             $table->timestamps();
+
             //$table->string('link')->default(null);
         });
     }

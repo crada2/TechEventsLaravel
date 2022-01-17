@@ -7,13 +7,26 @@
     <p class="card-date"><i>{{$event->date_time}}</i> </p>
     <b>Maximum users allowed: {{$event->users_max}}</b>
     <hr />
-      <div class="d-flex justify-content-around">
-        <form action="{{route('enroll', $event->id)}}" method="POST">
-          @csrf 
-          <button type="submit" class="btn btn-outline-success">Enroll in Course</button>
-        </form>
-        <a type="submit" class="btn btn-outline-light" href="{{route('show', ['id'=>$event->id])}}">🔍</a>
-      </div>
+    @if ($event->user_count < $event->users_max)
+    <p>{{$event->users_max-$event->user_count}}/{{$event->users_max}} free</p>
+    <div class="d-flex justify-content-around">
+      <form action="{{route('enroll', $event->id)}}" method="POST">
+        @csrf 
+        <button type="submit" class="btn btn-outline-success">Enroll in Course</button>
+      </form>
+      <a type="submit" class="btn btn-outline-light" href="{{route('show', ['id'=>$event->id])}}">🔍</a>
+    </div>
+    @else
+    <p class="text-danger fw-bold">EVENT FULL</p>
+    <div class="d-flex justify-content-around">
+      <form action="{{route('enroll', $event->id)}}" method="POST">
+        @csrf 
+        <button type="submit" class="btn btn-outline-success" hidden>Enroll in Course</button>
+      </form>
+      <a type="submit" class="btn btn-outline-light" href="{{route('show', ['id'=>$event->id])}}" hidden>🔍</a>
+    </div>
+    @endif
+  
   </div>
 </div>
 
