@@ -42,11 +42,12 @@ Auth::routes();
 
 //Admin routes
 Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index')->middleware('Admin');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
+Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');
 
 
-
+//Mails
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -67,23 +68,3 @@ Route::get('/profile', function () {
     // Only verified users may access this route...
 })->middleware('verified');
 
-/*Route::get('/send', function () {
-
-    $correo = new SendCourse;
-    Mail::to('carbel.cecilia@gmail.com')->send($correo);//::send(new SendCourse)
-
-    return "Msj enviado";
-});
-/*Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
-*/
-
-/*Route::get('notificacion', function () {
-    $user = User::find(7);
-    $user->notify(new RegisterCourse());
-
-    return "Notificación enviada";
-});*/
-Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
-Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');
