@@ -5,7 +5,7 @@
 
 <main class="py-4">
   <section class="alert alert-secondary d-flex justify-content-around">  
-    <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
+    {{-- <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a> --}}
     <h2>Dashboard</h2>
     <a class="btn btn-outline-secondary" href="{{ route('events.create') }}">New Event</a>
   </section>

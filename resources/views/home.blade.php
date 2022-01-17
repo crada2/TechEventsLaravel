@@ -2,9 +2,9 @@
 @auth
 <x-header />
    
-        <section class="alert alert-secondary d-flex justify-content-around"> 
+{{--         <section class="alert alert-secondary d-flex justify-content-around"> 
             <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
-       </section>
+       </section> --}}
   
 @section('content')
     <div class="container ">

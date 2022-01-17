@@ -1,3 +1,11 @@
+<?php
+use Carbon\Carbon;
+use Carbon\CarbonTimeZone;
+
+$tz = CarbonTimeZone::create('Europe/Madrid');
+$date = Carbon::now($tz);
+?>
+
 @extends('layouts.app')
 <x-header />
 
@@ -33,8 +41,8 @@
           <img class="bd-placeholder-img" width="100%" height="100%" src="https://2.bp.blogspot.com/-6NxUmY-aZp8/UYfiaj_9o9I/AAAAAAAABV0/alUMUycPe5o/s1600/Fondo+HD+para+bajar+-+WiriWiri_info+-+(90).png" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>The Ultimate Docker Course</h1>
-                <p>Everything you need to master Docker in one clear, concise, and practical course.</p>
+                <h1>The Ultimate Docker Coursee</h1>
+                <p>Everything you need to master Docker In one clear, concise, and practical course.</p>
                 <p><a class="btn btn-outline-light" href="{{route('home') }}">Sign up today</a></p>
               </div>
             </div>
@@ -77,32 +85,58 @@
 
     <div class="container">  <!-- containers de articulos destacados -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
-        @foreach ($events as $event)
-            <x-eventCard :event='$event' />
-        @endforeach
+        
+          @foreach ($events as $event)
+          @if ($event->date_time >= $date)
+              <x-eventCard :event='$event' />
+                @endif
+          @endforeach
+      
+       
+        
 
       </div><!-- /.row -->
+      <br><br>
     </div>
 
-    <!-- START THE FEATURETTES -->
+    <!-- eventos pasados -->
 
     <hr class="featurette-divider ">
-
+    <h2 class="row featurette d-flex justify-content-center">Eventos pasados</h2>
+    <br><br>
     <div class="row featurette d-flex justify-content-around">
       <div class="col-md-7">
-        <h2 class="featurette-heading ">
-          Businesses large and small trust <b>Crada Tech-Events</b> 
-          to scale their business. <span class="text-muted">Learn from true experts.</span></h2>
+      <hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          @include('components.pastEvents')
+        </div>
       </div>
-      <div class="col-md-5">
-        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="https://codewithmosh-assets.netlify.app/why-expert.4b07f585.png" width="500" height="500" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-      </div>
+      
     </div>
 
     <hr class="featurette-divider">
 
-    <!-- /END THE FEATURETTES -->
+   
+    <!-- eventos futuros -->
+
+ 
+    <h2 class="row featurette d-flex justify-content-center">Próximos cursos</h2>
+    <br><br>
+    <div class="row featurette d-flex justify-content-around">
+      <div class="col-md-7">
+      <hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        @foreach ($events as $event)
+          @if ($event->date_time > $date)
+              <x-eventCard :event='$event' />
+                @endif
+          @endforeach
+        </div>
+      </div>
+      
+    </div>
+
+    <hr class="featurette-divider">
 
     </div><!-- /.container -->
   </main>
