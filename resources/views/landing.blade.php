@@ -2,11 +2,20 @@
 <x-header />
 
     @auth
+      @if (Auth::user()->name == 'Admin')
         <section class="alert alert-secondary d-flex justify-content-around"> 
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
-       </section>
+          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+          <a class="btn btn-outline-secondary" href="{{ route('admin.index') }}">My Dashboard</a>
+          <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+        </section>
+        @endif
+        @if (Auth::user()->name != 'Admin')
+          <section class="alert alert-secondary d-flex justify-content-around"> 
+              <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
+              <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
+              <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
+        </section>
+        @endif
     @endauth
 
 @section('content')
@@ -67,9 +76,9 @@
 
     <div class="container">  <!-- containers de articulos destacados -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
-        <!--foreach-->
-        @include('components.eventCard')
-        <!--foreachend-->
+        @foreach ($events as $event)
+            <x-eventCard :event='$event' />
+        @endforeach
 
       </div><!-- /.row -->
     </div>
@@ -90,7 +99,6 @@
       </div>
     </div>
 
-    
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->

@@ -21,7 +21,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+         //
     }
 
     /**
@@ -110,6 +110,7 @@ class EventController extends Controller
         $eventToUpdate->title= $request->input('title');
         $eventToUpdate->date_time = $request->input('date_time');
         $eventToUpdate->text = $request->input('text');
+        $eventToUpdate->users_max = $request->input('users_max');
 
         $eventToUpdate->save();
 
@@ -129,6 +130,5 @@ class EventController extends Controller
         Event::destroy(($id));
         return back();
     }
-
 
 }

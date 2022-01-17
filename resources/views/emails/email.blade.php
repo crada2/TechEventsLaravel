@@ -14,6 +14,9 @@
 
     <p>Congratulations {{ $username }}, you have been subscribed to {{ $title }}!
 
+
+    <button ><a href="{{ route('landing') }}"></a>Start Course</button>
+
     Remember, this is gona be celebrated on the next {{ $date }} </p>
 
 

@@ -1,12 +1,5 @@
 @extends('layouts.app')
 <x-header />
-    @auth
-        <section class="alert alert-secondary d-flex justify-content-around"> 
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Next Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
-            <a class="btn btn-outline-secondary" href="{{ route('home') }}">Past Courses</a>
-       </section>
-    @endauth
 @section('content')
     <div class="container ">
         <div class="row justify-content-center">
@@ -30,7 +23,7 @@
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
                                      <!--foreach-->
                                     @foreach ($events as $event)
-                                    <x-eventCard :event='$event' />
+                                        <x-event_usercard :event='$event' />
                                     @endforeach
                                      <!--foreachend-->
                                     <br>

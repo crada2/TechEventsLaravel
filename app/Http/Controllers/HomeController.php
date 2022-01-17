@@ -30,32 +30,40 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $events = [];
+
         if (Auth::user()) {
             $user = Auth::user();
-            $events = $user->events;
+            $events = $user->event;
         }
 
-        return view('home', ['events'=> $events]);
-
-
+        return view('home', ['events' => $events]);
     }
 
-    public function enroll($id)
-    {
+    public function enroll($id) {
         $user = User::find(Auth::id());
         $event = Event::find($id);
-        $totalusers = Event::eventVacancy($event);
+
+        $usercount = Event::eventVacancy($event);
         $inscription = Event::checkEnrollment($user, $event);
 
-        if ($totalusers < $event->users_max && !$inscription) {
+        if ($usercount < $event->users_max && !$inscription) {
             $user->event()->attach($event);
 
             $username = $user->name;
             $correo = new SendCourse ($username, $event);
             Mail::to($user->email)->send($correo);
         }
+
+        return redirect()->route('home');
+    }
+
+    public function unsubscribe($id) {
+        $user = User::find(Auth::id());
+        $event = Event::find($id);
+
+        $user->event()->detach($event);
+
         return redirect()->route('home');
     }
 }

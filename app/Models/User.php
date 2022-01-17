@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function events() {
+    public function event() {
         return $this->belongsToMany(Event::class);
     }
 }

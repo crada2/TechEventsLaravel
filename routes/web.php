@@ -85,3 +85,5 @@ Route::get('/profile', function () {
 
     return "Notificación enviada";
 });*/
+Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
+Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');
