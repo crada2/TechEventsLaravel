@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'title',
         'img',
@@ -18,32 +18,32 @@ class Event extends Model
     ];
 
     //Eloquent relations
-    public function user() 
+    public function user()
     {
         return $this->belongsToMany(User::class);
     }
 
 
-    static function totalEnrollees($events) 
+    static function totalEnrollees($events)
     {
         $events=Event::withCount('user')->get();
         return $events;
     }
 
-    static function eventVacancy($event) 
+    static function eventVacancy($event)
     {
         $usercount = Event::totalEnrollees($event);
 
         foreach ($usercount as $item) {
 
-            if ($item->id === $event->id) {                
+            if ($item->id === $event->id) {
                 $usercount = $item->user_count;
                 return $usercount;
             }
         }
     }
 
-    static function checkEnrollment($user, $event) 
+    static function checkEnrollment($user, $event)
     {
         foreach ($user->event as $inscriptionEvent) {
 
@@ -55,5 +55,5 @@ class Event extends Model
         return false;
     }
 
-  
+
 }
