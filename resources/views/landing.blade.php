@@ -87,22 +87,14 @@ $date = Carbon::now($tz);
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
         
           @foreach ($events as $event)
-         
+          @if ($event->date_time > $date)
               <x-eventCard :event='$event' />
-            
+            @endif
           @endforeach
-      
-       
-        
-
       </div><!-- /.row -->
       <br><br>
     </div>
-
-
-
     <hr class="featurette-divider">
-
     </div><!-- /.container -->
   </main>
     <x-footer />
