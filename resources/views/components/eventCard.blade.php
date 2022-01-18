@@ -27,12 +27,7 @@
         </form>
         <a type="submit" class="btn btn-outline-light" href="{{route('show', ['id'=>$event->id])}}">🔍</a>
       </div>
-<<<<<<< HEAD
-      <br>
-   
-=======
     @endif
->>>>>>> e702f3a8586e943e4124ba72f9105ea4a0be6db5
   </div>
 </div>
 

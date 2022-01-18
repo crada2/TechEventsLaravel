@@ -65,4 +65,6 @@ class Event extends Model
         }
         return false;
     }
+
+   
 }
