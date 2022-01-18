@@ -25,30 +25,39 @@ class Event extends Model
         return $this->belongsToMany(User::class);
     }
 
-
-    static function totalEnrollees($events)
+    public function totalEnrollees()
     {
-        $events=Event::withCount('user')->get();
-        return $events;
+        return $this->user()->count();
+       /* $events = Event::withCount('user')->get();
+        return $events;*/
+    }
+
+    public function vacancy()
+    {
+        return $this->users_max - $this->totalEnrollees();
+    }
+
+    public function isFull()
+    {
+        if($this->vacancy() == 0){
+            return true;
+        } return false;
     }
 
     static function eventVacancy($event)
     {
+        /* 
         $usercount = Event::totalEnrollees($event);
-
-        foreach ($usercount as $item) {
-
-            if ($item->id === $event->id) {
-                $usercount = $item->user_count;
-                return $usercount;
-            }
+        foreach ($usercount as item) {
+            $usercount = $item->user_count;
+            return $usercount;
         }
+        */
     }
 
     static function checkEnrollment($user, $event)
     {
         foreach ($user->event as $inscriptionEvent) {
-
             if ($event->id === $inscriptionEvent->id) {
                 $inscription = true;
                 return $inscription;
@@ -56,10 +65,4 @@ class Event extends Model
         }
         return false;
     }
-
-    public function likes(): HasMany
-{
-    return $this->hasMany(PostLike::class);
-}
-
 }

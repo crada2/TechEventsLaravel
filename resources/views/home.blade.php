@@ -5,7 +5,6 @@
 {{--         <section class="alert alert-secondary d-flex justify-content-around"> 
             <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
        </section> --}}
-  
 @section('content')
     <div class="container ">
         <div class="row justify-content-center">
@@ -21,11 +20,6 @@
                         </div>
                     @endif
                     <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My courses') }} </h3>
-                    
-
-                    <!--imprimo cards del mismo usuario-->
-                  
-
                     <br>    
                         <div class="container">  
                              <!-- foreach para recorrer eventos con ee id e imprimirlos -->
@@ -50,7 +44,5 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 @endauth

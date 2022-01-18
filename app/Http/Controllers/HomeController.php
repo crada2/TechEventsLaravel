@@ -36,7 +36,6 @@ class HomeController extends Controller
             $user = Auth::user();
             $events = $user->event;
         }
-
         return view('home', ['events' => $events]);
     }
 
@@ -54,7 +53,6 @@ class HomeController extends Controller
             $correo = new SendCourse ($username, $event);
             Mail::to($user->email)->send($correo);
         }
-
         return redirect()->route('home');
     }
 
@@ -63,11 +61,6 @@ class HomeController extends Controller
         $event = Event::find($id);
 
         $user->event()->detach($event);
-
         return redirect()->route('home');
     }
-   /*  public function userCourses(){
-        $events= Event::orderBy('date_time', 'DESC')->get();
-        return view('home', ['events' => $events]);
-    } */
 }

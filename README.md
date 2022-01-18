@@ -1,66 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><img src="./public/img/Readme.MD/CradaLogoGat.png?raw=true" width="200"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
+CRADA Tech Events📌
+============
+
+***
+
+## Introducción🚀 
+
+El proyecto "CRADA TECH EVENTS", es una aplicación web para gestionar cursos online como talleres, masterclass o webinars.Los usuarios podrán ver la descripción de un evento, apuntarse y desapuntarse. Podrán ver la lista de los eventos a los que se han apuntado. El administrador tiene las herramientas para la gestión (CRUD) de los eventos.
+## Objetivos de la práctica🛫 
+
+1.- Aplicar el patrón MVC (Model, View, Controller).
+
+2.- Aplicar testing.
+
+3.- Introducirnos a las bases de Laravel.
+
+4.- Entender componentes de vistas y controladores.
+
+5.- Practicar el proceso de contruciñon de elementos y su vinculación.
+
+
+## Estructura 📚 
+
+- Requisitos Funcionales 🎯:
+
+    - En portada la aplicación tendrá un slider con las masterclasses destacadas. éstas serán seleccionables por el administrador.
+    - En portadase muestra una vista con los eventos ordenados del más cercano al más lejano en el tiempo.
+    - Los eventos incluyen como: título, fecha/hora, número máximo de participantes, descripción y una imagen.
+    - Los eventos pasados se muestran en la vista de pasados pero se mantienen identificables como no disponibles.
+    - Los usuarios puede registrarse para apuntarse a un evento. Una vez apuntados no pueden volver a hacerlo.
+    - Al apuntarse a un evento, recibirán un email (empresarial - html ) con el link (zoom, meets, etc..) en donde se va a realizar, así como recordando el título del evento, la hora y el día.
+    - Los usuarios pueden ver en una página la lista de los eventos a los que están registrados.
+    - El administrador podrá hacer CRUD de los eventos.
+    - Cuando un evento esté lleno (máximo número de participantes) nadie podrá registrarse.
+    - Test de aceptación.
+    - Envío de el email se realiza por sistema de colas.
+    - Para el Frontend, se usan componentes de blade.
+    
+## Comenzando 🚀 
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu ordenador local, para propósitos de desarrollo y pruebas:
+
+Abre la terminal y ejecuta:
+
+1. Clone git https://github.com/.git para descargar el proyecto, realiza un fork.
+2. Crear una base de datos en phpMyAdmin en local.
+3. Nombre de base de datos : tech-events
+4. Ejecutar Migracion "php artisant migration:fresh --seed"
+
+## Install
+
+- composer install
+- npm run watch
+- npm run dev
+
+## 🚀 Proyecto en producción
+
+Dónde encontrar el proyecto en producción:
+
+## Wireframe 🛸
+Wireframe de la idea principal del proyecto con funcionalidad:
+
+<p align="center"> 
+  <img src="./Readme/wireframe/movil.png?raw=true" width=80%>
+  <img src="./Readme/wireframe/destopk.png?raw=true" width=100%>
 </p>
 
-## About Laravel
-¿me recordáis la hora de mañana?
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Versión Desktop 🛰️
+<p align="center"> 
+  <img src="./Readme/Mockup/Landing1.png?raw=true" width=50%>
+</p>
+<p align="center"> 
+  <img src="./Readme/Mockup/Landing2.png?raw=true" width=50%>
+</p>
+<p align="center"> 
+  <img src="./Readme/Mockup/Landing3.png?raw=true" width=50%>
+</p>
 
-## Learning Laravel
+## Versión Mobile First 🪐
+<p align="center"> 
+  <img src="./Readme/Mockup/Movilfinal.png?raw=true" width=100%>
+</p>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Dependencias 🚁
 
-## Laravel Sponsors
+* Frontend: Boostrap HTML, CSS, SCSS - Opcional.
+* Backend: PHP, laravel.
+* Bases de datos: MySQL.
+## Herramientas  🧰 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* Miró
+* Figma
+* Mockup Ninja
+* Trello
+* Font-face
+* Metodologías Ágiles
+* Bootstrap
+* Laravel
+* SQL
+* PHP-MyAdmin
 
-### Premium Partners
+## Autores🌻 
+* Sol Turipe.
+* Cecilia Carbajal.
+* Clàudia Calero Duró.
+* Davina Medina.
+* Abdessamad Belkhialat.
+* Miquel Cruz.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
 
-## Contributing
+## Gratitud 🎁
+* Comenta a otros sobre este proyecto 📢 .
+* Apoya nuestros proyectos 🐈‍⬛.
+* Hecho con  ❤️ por [CRADA 🐱](https://github.com/crada2/TechEventsLaravel)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

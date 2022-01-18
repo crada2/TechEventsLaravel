@@ -14,10 +14,12 @@
     </span>
 <br><br>
     <p class="card-text ">{{$event->text}}</p>
-    
     <p class="card-date "><i>{{$event->date_time}}</i> </p>
-    <b>Maximum users allowed: {{$event->users_max}}</b>
+    <b>Maximum users allowed: {{$event->vacancy()}}</b>
     <hr />
+    @if ($event->isFull())
+      <p class="text-danger fw-bold d-flex justify-content-center">EVENT FULL</p>
+    @else
       <div class="d-flex justify-content-around">
         <form action="{{route('enroll', $event->id)}}" method="POST">
           @csrf 
@@ -25,8 +27,12 @@
         </form>
         <a type="submit" class="btn btn-outline-light" href="{{route('show', ['id'=>$event->id])}}">🔍</a>
       </div>
+<<<<<<< HEAD
       <br>
    
+=======
+    @endif
+>>>>>>> e702f3a8586e943e4124ba72f9105ea4a0be6db5
   </div>
 </div>
 
