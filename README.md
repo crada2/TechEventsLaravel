@@ -1,6 +1,5 @@
 <p align="center"><img src="./public/img/Readme.MD/CradaLogoGat.png?raw=true" width="200"></a></p>
 
-
 CRADA Tech Events📌
 ============
 
@@ -19,7 +18,7 @@ El proyecto "CRADA TECH EVENTS", es una aplicación web para gestionar cursos on
 
 4.- Entender componentes de vistas y controladores.
 
-5.- Practicar el proceso de contruciñon de elementos y su vinculación.
+5.- Practicar el proceso de contrucción de elementos y su vinculación.
 
 
 ## Estructura 📚 
@@ -63,26 +62,22 @@ Dónde encontrar el proyecto en producción:
 Wireframe de la idea principal del proyecto con funcionalidad:
 
 <p align="center"> 
-  <img src="./Readme/wireframe/movil.png?raw=true" width=80%>
-  <img src="./Readme/wireframe/destopk.png?raw=true" width=100%>
+  <img src="./public/img/Readme.MD/movil.png?raw=true" width=60%>
+  <img src="./public/img/Readme.MD/destopk.png?raw=true" width=60%>
 </p>
 
 
 
 ## Versión Desktop 🛰️
-<p align="center"> 
-  <img src="./Readme/Mockup/Landing1.png?raw=true" width=50%>
-</p>
-<p align="center"> 
-  <img src="./Readme/Mockup/Landing2.png?raw=true" width=50%>
-</p>
-<p align="center"> 
-  <img src="./Readme/Mockup/Landing3.png?raw=true" width=50%>
+
+<p align="center">
+  <img src="./public/img/Readme.MD/crada-destopk.gif" alt="animated" width=60% />
 </p>
 
+
 ## Versión Mobile First 🪐
-<p align="center"> 
-  <img src="./Readme/Mockup/Movilfinal.png?raw=true" width=100%>
+<p align="center">
+  <img src="./public/img/Readme.MD/crada-movil.gif" alt="animated"  />
 </p>
 
 
@@ -109,14 +104,15 @@ Wireframe de la idea principal del proyecto con funcionalidad:
 * Cecilia Carbajal.
 * Clàudia Calero Duró.
 * Davina Medina.
-* Abdessamad Belkhialat.
 * Miquel Cruz.
+* Abdessamad Belkhialat.
 
 
 ## Gratitud 🎁
 * Comenta a otros sobre este proyecto 📢 .
 * Apoya nuestros proyectos 🐈‍⬛.
 * Hecho con  ❤️ por [CRADA 🐱](https://github.com/crada2/TechEventsLaravel)
+
 
 
 
