@@ -10,6 +10,7 @@ CRADA Tech Events📌
 
 El proyecto "CRADA TECH EVENTS", es una aplicación web para gestionar cursos online como talleres, masterclass o webinars.Los usuarios podrán ver la descripción de un evento, apuntarse y desapuntarse. Podrán ver la lista de los eventos a los que se han apuntado. El administrador tiene las herramientas para la gestión (CRUD) de los eventos.
 ## Objetivos de la práctica🛫 
+
 1.- Aplicar el patrón MVC (Model, View, Controller).
 
 2.- Aplicar testing.
