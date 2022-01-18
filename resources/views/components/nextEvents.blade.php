@@ -27,12 +27,14 @@
  </section>
     
  <br><br>
-<div class="d-flex justify-content-center">
+ <div class="container">  
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
   @foreach ($events as $event)
   @if ($event->date_time > $date)
       <x-eventCard :event='$event' />
         @endif
   @endforeach
+</div>
 </div>
     
   

@@ -24,11 +24,7 @@
                     
 
                     <!--imprimo cards del mismo usuario-->
-                    @if (Auth::user()->id )
-                    
-                        cards con id usuario 
-                   
-                    @endif
+                  
 
                     <br>    
                         <div class="container">  
@@ -38,8 +34,10 @@
                                      <!--foreach-->
                                     @foreach ($events as $event)
                                         <x-event_usercard :event='$event' />
+
+                                    <!--like /dislike-->
                                     @endforeach
-                                     <!--foreachend-->
+                                     
                                     <br>
                                 </div>
                             </div>

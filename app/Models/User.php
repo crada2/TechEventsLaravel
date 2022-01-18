@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\PostLike;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
 {
@@ -45,4 +47,9 @@ class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
     public function event() {
         return $this->belongsToMany(Event::class);
     }
+
+    public function likes(): HasMany
+{
+    return $this->hasMany(PostLike::class);
+}
 }

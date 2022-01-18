@@ -89,12 +89,10 @@ $date = Carbon::now($tz);
           @foreach ($events as $event)
          
               <x-eventCard :event='$event' />
-            
+          
           @endforeach
       
-       
-        
-
+      
       </div><!-- /.row -->
       <br><br>
     </div>
