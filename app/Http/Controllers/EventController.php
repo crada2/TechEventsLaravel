@@ -50,7 +50,6 @@ class EventController extends Controller
             $img = $request->file('img');
             $imgName = $img->getClientOriginalName();
             $path = $request->file('img')->storeAs($destination_path, $imgName);
-
             $data['img'] = $imgName;
         }
 
@@ -102,7 +101,6 @@ class EventController extends Controller
             $img = $request->file('img');
             $imgName = $img->getClientOriginalName();
             $path = $request->file('img')->storeAs($destination_path, $imgName);
-
             $img = $imgName;
         }
 
@@ -113,7 +111,6 @@ class EventController extends Controller
         $eventToUpdate->users_max = $request->input('users_max');
 
         $eventToUpdate->save();
-
         return redirect(route('admin.index'));
     }
 
@@ -130,4 +127,13 @@ class EventController extends Controller
         Event::destroy(($id));
         return back();
     }
+
+    public function pastEvents() {
+        $events = Event::orderBy('date_time', 'ASC')->get();
+        return view('components.pastEvents', ['events'=>$events]);
+    } 
+    public function nextEvents() {
+        $events = Event::orderBy('date_time', 'ASC')->get();
+        return view('components.nextEvents', ['events'=>$events]);
+    } 
 }

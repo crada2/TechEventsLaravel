@@ -20,12 +20,8 @@ class CreateEventsTable extends Migration
             $table->integer('users_max')->default(1);
             $table->string('text');
             $table->dateTime('date_time');
-            $table->boolean('ifEnrolled')->nullable();
             $table->foreignId('user_id')->nullable()->default(null);
-            $table->integer('totalEnrollees')->default(0);
             $table->timestamps();
-
-            //$table->string('link')->default(null);
         });
     }
 

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PastEventsController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -37,6 +39,9 @@ Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
 //Route::post('/events/email/{id}', [SendController::class,'email'])->name('email');
+
+Route::get('/pastEvents', [EventController::class, 'pastEvents'])->name('pastEvents');
+Route::get('/nextEvents', [EventController::class, 'nextEvents'])->name('nextEvents');
 
 Auth::routes();
 

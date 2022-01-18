@@ -53,17 +53,14 @@ class HomeController extends Controller
             $correo = new SendCourse ($username, $event);
             Mail::to($user->email)->send($correo);
         }
-
         return redirect()->route('home');
     }
-
 
     public function unsubscribe($id) {
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
         $user->event()->detach($event);
-
         return redirect()->route('home');
     }
 }

@@ -9,7 +9,6 @@ class LandingController extends Controller
 {
     public function index() {
         $events = Event::orderBy('date_time', 'ASC')->get();
-        
         return view('landing', ['events'=>$events]);
     }
 
