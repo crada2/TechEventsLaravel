@@ -5,14 +5,17 @@
    <br>
 
    @auth  
-    <span  class="d-flex justify-content-around bg-light rounded-3 ">
-      <div class="d-flex"><button class="p-2 btn btn-success opacity-75 rounded-circle">👍🏻 </button>
-        <p>0</p></div>
+      <span  class="d-flex justify-content-around bg-light rounded-3 ">
+        <div class="d-flex"><button class="p-2 btn btn-success opacity-75 rounded-circle">👍🏻 </button>
+          <b  class="p-2">{{$event->likesCount()}} &nbsp</b>
+        </div>
+        
+   
       
-     
-        <div class="d-flex"><button class="p-2 btn btn-danger opacity-75 rounded-circle">👎🏻 </button>
-          <p>0 &nbsp</p></div>
-    </span>
+          <div class="d-flex"><button class="p-2 btn btn-danger opacity-75 rounded-circle">👎🏻 </button>
+            <b class="p-2">{{$event->likesCount()}} &nbsp</b>
+          </div>
+      </span>
     @endauth
 
     @if(!(Auth::user()))

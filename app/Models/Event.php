@@ -65,6 +65,13 @@ class Event extends Model
         }
         return false;
     }
+//relacionar many to many con user.   (array de usuarios)
+    public function likesBy(){
+        return $this->belongsToMany(User::class, "likes");
+    }
 
+    public function likesCount(){
+        return $this->likesBy()->count();
+    }
    
 }
