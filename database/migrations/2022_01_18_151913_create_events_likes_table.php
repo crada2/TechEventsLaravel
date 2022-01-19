@@ -13,7 +13,7 @@ class CreateEventslikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('eventslikes', function (Blueprint $table) {
+        Schema::create('likes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('event_id');
@@ -28,6 +28,6 @@ class CreateEventslikesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventslikes');
+        Schema::dropIfExists('likes');
     }
 }

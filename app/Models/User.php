@@ -49,7 +49,7 @@ class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
     }
 
     public function likes(){
-        return $this->belongsToMany(Event::class);
+        return $this->belongsToMany(Event::class, "likes");
     }
   
 }
