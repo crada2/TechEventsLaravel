@@ -3,6 +3,8 @@
   <div class="card-body">
     <h2><b class="card-text d-flex justify-content-center ">{{$event->title}}</b> </h2>
    <br>
+
+   @auth  
     <span  class="d-flex justify-content-around bg-light rounded-3 ">
       <div class="d-flex"><button class="p-2 btn btn-success opacity-75 rounded-circle">👍🏻 </button>
         <p>0</p></div>
@@ -10,8 +12,18 @@
      
         <div class="d-flex"><button class="p-2 btn btn-danger opacity-75 rounded-circle">👎🏻 </button>
           <p>0 &nbsp</p></div>
-        
     </span>
+    @endauth
+
+    @if(!(Auth::user()))
+    <p class="card-text  p-3 mb-2 bg-light text-dark d-flex justify-content-center"><i> ⭐ ⭐ ⭐ ⭐  {{ $event->name }}</i> </p>
+    @endif 
+        
+    
+
+
+
+
 <br><br>
     <p class="card-text ">{{$event->text}}</p>
     <p class="card-date "><i>{{$event->date_time}}</i> </p>
