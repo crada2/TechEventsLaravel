@@ -53,7 +53,7 @@
     <p>Congratulations {{ $username }}, you have been subscribed to {{ $title }}!
     <p>This is gona be celebrated on the next {{ $date }} </p>
     <br>
-    <a href="{{ route('home') }}">Start Course</a>
+    <a href="{{ route('home') }}">Your Courses</a>
 
 </body>
 </html>
