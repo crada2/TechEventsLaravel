@@ -63,4 +63,5 @@ class HomeController extends Controller
         $user->event()->detach($event);
         return redirect()->route('home');
     }
+
 }

@@ -28,8 +28,10 @@
                                      <!--foreach-->
                                     @foreach ($events as $event)
                                         <x-event_usercard :event='$event' />
+
+                                    <!--like /dislike-->
                                     @endforeach
-                                     <!--foreachend-->
+                                     
                                     <br>
                                 </div>
                             </div>

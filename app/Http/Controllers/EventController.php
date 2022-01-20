@@ -21,7 +21,13 @@ class EventController extends Controller
      */
     public function index()
     {
-         //
+         $events = Event::all();
+        $events = Event::orderBy('date', 'asc')->get();
+
+        return view('landing', [
+            'events' => $events, 
+            'highlightedEvents' => Event::highlightedEvents()
+        ]);
     }
 
     /**
@@ -128,12 +134,20 @@ class EventController extends Controller
         return back();
     }
 
-    public function pastEvents() {
+    public function pastEvents() 
+    {
         $events = Event::orderBy('date_time', 'ASC')->get();
         return view('components.pastEvents', ['events'=>$events]);
     } 
-    public function nextEvents() {
+
+    public function nextEvents() 
+    {
         $events = Event::orderBy('date_time', 'ASC')->get();
         return view('components.nextEvents', ['events'=>$events]);
+    } 
+    public function like($id) {
+        if(Auth::user()-> isLikeIt($id)) return back();
+        Auth::user()->likes()->attach($id);
+        return back();
     } 
 }

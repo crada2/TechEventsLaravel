@@ -38,6 +38,7 @@ Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events
 Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
+
 //Route::post('/events/email/{id}', [SendController::class,'email'])->name('email');
 
 Route::get('/pastEvents', [EventController::class, 'pastEvents'])->name('pastEvents');
@@ -50,7 +51,6 @@ Route::get('/dashboard', [LandingController::class, 'admin'])->name('admin.index
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'enroll'])->name('enroll');
 Route::delete('/enroll/{id}', [App\Http\Controllers\HomeController::class, 'unsubscribe'])->name('unsubscribe');
-
 
 //Mails
 Route::get('/email/verify', function () {
@@ -73,3 +73,5 @@ Route::get('/profile', function () {
     // Only verified users may access this route...
 })->middleware('verified');
 
+
+Route::get('/like/{id}', [EventController::class, 'like'])->name('like')->middleware("auth");
