@@ -26,12 +26,6 @@ class HomeController extends TestCase
                 ->assertRedirect("/login");
     }
 
-    public function test_user_cant_enroll_more_than_once()
-    {
-
-    }
-
-
     public function test_users_cant_enroll_on_full_event()
     {
         $event = Event::factory()->create(['users_max' => 0]);
@@ -43,5 +37,16 @@ class HomeController extends TestCase
         $usercount = Event::checkEnrollment($user, $event);
 
         $this->assertEquals(0, $usercount);
+    }
+
+    public function test_students_can_unsubscribe_from_an_event()
+    {
+        $user = User::factory()->create();
+        $event = Event::factory()->create();
+
+        $event->enroll($user->id);
+        $event->unsubscribe($user->id);
+
+        $this->assertEquals(0, $user->event()->detach($event));
     }
 }
