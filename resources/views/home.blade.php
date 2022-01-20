@@ -1,5 +1,10 @@
 @extends('layouts.app')
+@auth
 <x-header />
+   
+{{--         <section class="alert alert-secondary d-flex justify-content-around"> 
+            <a class="btn btn-outline-secondary" href="{{ route('landing') }}">Back</a>
+       </section> --}}
 @section('content')
     <div class="container ">
         <div class="row justify-content-center">
@@ -14,8 +19,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h3 class="text-decoration-underline d-flex justify-content-around">✰ {{ __('My courses') }} </h3>
-                    ( user_id: {{ Auth::user()->id }} )
+                    <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My courses') }} </h3>
                     <br>    
                         <div class="container">  
                              <!-- foreach para recorrer eventos con ee id e imprimirlos -->
@@ -24,20 +28,21 @@
                                      <!--foreach-->
                                     @foreach ($events as $event)
                                         <x-event_usercard :event='$event' />
+
+                                    <!--like /dislike-->
                                     @endforeach
-                                     <!--foreachend-->
+                                     
                                     <br>
                                 </div>
                             </div>
                             <br>
-                                <h3 class="text-decoration-underline d-flex justify-content-around">✰ {{ __('My certificates') }} </h3>
+                                <h3 class="text-decoration d-flex justify-content-around">✰ {{ __('My certificates') }} </h3>
                             <br>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 @endsection
+@endauth

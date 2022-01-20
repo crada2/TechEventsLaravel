@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\PostLike;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
 {
@@ -44,5 +46,14 @@ class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
 
     public function event() {
         return $this->belongsToMany(Event::class);
+    }
+//relacionar many to many con event.   (array de eventos)
+    public function likes(){
+        return $this->belongsToMany(Event::class, "likes");
+    }
+  
+    public function isLikeIt($eventId){
+        if($this->likes()->find($eventId)) return true;
+        return false;
     }
 }
