@@ -1,3 +1,12 @@
+<style>
+.title_init{
+    color:#323334;
+}
+.subtitle{
+    color:#323334;
+}
+
+</style>
 <?php
 
 use Carbon\Carbon;
@@ -40,29 +49,29 @@ $date = Carbon::now($tz);
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="https://2.bp.blogspot.com/-6NxUmY-aZp8/UYfiaj_9o9I/AAAAAAAABV0/alUMUycPe5o/s1600/Fondo+HD+para+bajar+-+WiriWiri_info+-+(90).png" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://img.freepik.com/vector-gratis/fondo-degradado-tonos-verdes_23-2148373476.jpg?size=626&ext=jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>The Ultimate Docker Coursee</h1>
-            <p>Everything you need to master Docker In one clear, concise, and practical course.</p>
+            <h1 class="title_init">The Ultimate Docker Coursee</h1>
+            <p class="subtitle">Everything you need to master Docker In one clear, concise, and practical course.</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img opacity-10" width="100%" height="100%" src="http://cdn26.us1.fansshare.com/photo/darkwallpapers/dark-color-hd-background-dark-colour-wallpapers-1561678654.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img opacity-10" width="100%" height="100%" src="https://img.freepik.com/vector-gratis/textura-granulada-degradada_23-2148987745.jpg?size=626&ext=jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
         <div class="container">
           <div class="carousel-caption">
-            <h1>The Ultimate React Native Series</h1>
-            <p>Everything you need to build and distribute professional-quality apps with React Native.</p>
+            <h1 class="title_init">The Ultimate React Native Series</h1>
+            <p class="subtitle">Everything you need to build and distribute professional-quality apps with React Native.</p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="https://c4.wallpaperflare.com/wallpaper/302/444/11/matrix-desktop-backgrounds-wallpaper-preview.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://i0.wp.com/hipertextual.com/wp-content/uploads/2017/03/color-degradado-fondos-degradados-multicolor-51200.jpg?fit=1200%2C750&ssl=1" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>The Ultimate Redux Course</h1>
-            <p>Go from beginner to expert in 6 hours. Everything you need to build modern apps with Redux.</p>
+            <h1 class="title_init">The Ultimate Redux Course</h1>
+            <p class="subtitle">Go from beginner to expert in 6 hours. Everything you need to build modern apps with Redux.</p>
           </div>
         </div>
       </div>
