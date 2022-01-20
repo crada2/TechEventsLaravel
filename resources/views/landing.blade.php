@@ -76,7 +76,7 @@ $date = Carbon::now($tz);
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  <!-- top eventos -->
   <hr class="featurette-divider">
   <div class="d-flex row">
     <h1 class="title d-flex justify-content-center">TOP EVENTS</h1>
@@ -92,7 +92,6 @@ $date = Carbon::now($tz);
       </div>
     </div>
   </div>
-
 
   <hr class="featurette-divider">
 
