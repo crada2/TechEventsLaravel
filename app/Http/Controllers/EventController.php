@@ -21,7 +21,13 @@ class EventController extends Controller
      */
     public function index()
     {
-         //
+         $events = Event::all();
+        $events = Event::orderBy('date', 'asc')->get();
+
+        return view('landing', [
+            'events' => $events, 
+            'highlightedEvents' => Event::highlightedEvents()
+        ]);
     }
 
     /**
