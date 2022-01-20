@@ -15,12 +15,6 @@
     @if(!(Auth::user()))
     <p class="card-text  p-3 mb-2 bg-light text-dark d-flex justify-content-center"><i> ⭐ ⭐ ⭐ ⭐  {{ $event->name }}</i> </p>
     @endif 
-        
-    
-
-
-
-
 <br><br>
     <p class="card-text ">{{$event->text}}</p>
     <p class="card-date "><i>{{$event->date_time}}</i> </p>
