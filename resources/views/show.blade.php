@@ -12,7 +12,13 @@
 
         <div class="position-relative d-flex  flex-column justify-content-center card-body">
                 <h2><b class="card-text d-flex justify-content-center">{{$event->title}}</b> </h2>
-                <p class=" d-flex justify-content-center "><i> ⭐ ⭐ ⭐ ⭐  {{ $event->name }}</i> </p>
+                @auth  
+                <span  class="d-flex justify-content-center   rounded-3 ">
+                 <div  class="   rounded-pill ">
+                  <a href="{{route('like', $event->id) }}"  class="card-text  p-3 mb-2 bg-light text-dark d-flex justify-content-center btn btn-outline-warning rounded-circle">⭐ {{$event->likesCount()}}  </a>
+                 </div>
+                </span>
+              @endauth
                 <p class="card-text d-flex justify-content-center ">{{$event->text}}</p>
                 <p class="card-date d-flex justify-content-center"><i>{{$event->date_time}}</i> </p>
                 <b class="d-flex justify-content-center ">Maximum users allowed: {{$event->users_max}}</b>

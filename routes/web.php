@@ -73,3 +73,5 @@ Route::get('/profile', function () {
     // Only verified users may access this route...
 })->middleware('verified');
 
+
+Route::get('/like/{id}', [EventController::class, 'like'])->name('like')->middleware("auth");

@@ -5,16 +5,10 @@
    <br>
 
    @auth  
-      <span  class="d-flex justify-content-around bg-light rounded-3 ">
-        <div class="d-flex"><button class="p-2 btn btn-success opacity-75 rounded-circle">👍🏻 </button>
-          <b  class="p-2">{{$event->likesCount()}} &nbsp</b>
-        </div>
-        
-   
-      
-          <div class="d-flex"><button class="p-2 btn btn-danger opacity-75 rounded-circle">👎🏻 </button>
-            <b class="p-2">{{$event->likesCount()}} &nbsp</b>
-          </div>
+      <span  class="d-flex justify-content-center bg-light  rounded-pill">
+       <div  class=" bg-secondary  rounded-pill opacity-75">
+        <a href="{{route('like', $event->id) }}" class="p-2"> <button class="p-2 btn btn-outline-warning  rounded-circle opacity-100 ">⭐ {{$event->likesCount()}}</button>  </a>
+       </div>
       </span>
     @endauth
 

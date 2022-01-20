@@ -136,4 +136,9 @@ class EventController extends Controller
         $events = Event::orderBy('date_time', 'ASC')->get();
         return view('components.nextEvents', ['events'=>$events]);
     } 
+    public function like($id) {
+        if(Auth::user()-> isLikeIt($id)) return back();
+        Auth::user()->likes()->attach($id);
+        return back();
+    } 
 }

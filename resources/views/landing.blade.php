@@ -29,7 +29,7 @@ $date = Carbon::now($tz);
 
 @section('content')
 
-  <main class="py-4">
+  <main class="py-1">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -40,10 +40,15 @@ $date = Carbon::now($tz);
         <div class="carousel-item active">
           <img class="bd-placeholder-img" width="100%" height="100%" src="https://2.bp.blogspot.com/-6NxUmY-aZp8/UYfiaj_9o9I/AAAAAAAABV0/alUMUycPe5o/s1600/Fondo+HD+para+bajar+-+WiriWiri_info+-+(90).png" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
             <div class="container">
-              <div class="carousel-caption text-start">
+              
+
+                <div class="d-flex justify-content-center" style="height: 65%">
+                
+  
+                </div>
+                <div class="carousel-caption text-start">
                 <h1>The Ultimate Docker Coursee</h1>
-                <p>Everything you need to master Docker In one clear, concise, and practical course.</p>
-                <p><a class="btn btn-outline-light" href="{{route('home') }}">Sign up today</a></p>
+
               </div>
             </div>
         </div>
@@ -88,7 +93,7 @@ $date = Carbon::now($tz);
         
           @foreach ($events as $event)
           @if ($event->date_time > $date)
-              <x-eventCard :event='$event' />
+          <x-event_usercard :event='$event' />
             @endif
           @endforeach
       </div><!-- /.row -->
