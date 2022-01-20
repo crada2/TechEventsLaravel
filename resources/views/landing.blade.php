@@ -90,20 +90,20 @@ $date = Carbon::now($tz);
 
     <div class="container">  <!-- containers de articulos destacados -->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex justify-content-around">
-        
           @foreach ($events as $event)
           @if ($event->date_time > $date)
           <x-event_usercard :event='$event' />
             @endif
           @endforeach
-      </div><!-- /.row -->
+      </div>
       <br><br>
     </div>
     <hr class="featurette-divider">
     </div><!-- /.container -->
   </main>
-    <x-footer />
-    @endsection
+  <x-footer />
+
+@endsection
 
 
 

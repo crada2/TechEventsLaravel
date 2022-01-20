@@ -128,11 +128,14 @@ class EventController extends Controller
         return back();
     }
 
-    public function pastEvents() {
+    public function pastEvents() 
+    {
         $events = Event::orderBy('date_time', 'ASC')->get();
         return view('components.pastEvents', ['events'=>$events]);
     } 
-    public function nextEvents() {
+
+    public function nextEvents() 
+    {
         $events = Event::orderBy('date_time', 'ASC')->get();
         return view('components.nextEvents', ['events'=>$events]);
     } 
