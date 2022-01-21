@@ -39,14 +39,14 @@ class HomeController extends TestCase
         $this->assertEquals(0, $usercount);
     }
 
-    public function test_students_can_unsubscribe_from_an_event()
+    public function test_users_can_unsubscribe_from_an_event()
     {
         $user = User::factory()->create();
         $event = Event::factory()->create();
 
-        $event->enroll($user->id);
-        $event->unsubscribe($user->id);
+        $user->event()->attach($event);
+        $this->actingAs($user)->delete(route("unsubscribe", $event->id));
 
-        $this->assertEquals(0, $user->event()->detach($event));
-    }
+        $this->assertEquals(0, $user->event()->count());
+    } 
 }

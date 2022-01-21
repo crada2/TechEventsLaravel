@@ -41,6 +41,4 @@ class EventControllerTest extends TestCase
     $response = $this->actingAs($admin)->get(route("update", $event->id));
     $response->assertStatus(200)->assertViewIs('admin.editEventform');
    }
-
-   
 }
