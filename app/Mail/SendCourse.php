@@ -28,7 +28,7 @@ class SendCourse extends Mailable
      *
      * @return void
      */
-    public function __construct( $username, $event)
+    public function __construct($username, $event)
     {
         //$data
         //$this->$data = $data;

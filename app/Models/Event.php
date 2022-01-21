@@ -28,7 +28,7 @@ class Event extends Model
     public function totalEnrollees()
     {
         return $this->user()->count();
-       /* $events = Event::withCount('user')->get();
+        /* $events = Event::withCount('user')->get();
         return $events;*/
     }
 
@@ -39,9 +39,10 @@ class Event extends Model
 
     public function isFull()
     {
-        if($this->vacancy() == 0){
+        if ($this->vacancy() == 0) {
             return true;
-        } return false;
+        }
+        return false;
     }
 
     static function eventVacancy($event)
@@ -65,13 +66,14 @@ class Event extends Model
         }
         return false;
     }
-//relacionar many to many con user.   (array de usuarios)
-    public function likesBy(){
+    //relacionar many to many con user.   (array de usuarios)
+    public function likesBy()
+    {
         return $this->belongsToMany(User::class, "likes");
     }
 
-    public function likesCount(){
+    public function likesCount()
+    {
         return $this->likesBy()->count();
     }
-   
 }

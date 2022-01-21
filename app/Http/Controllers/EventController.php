@@ -21,11 +21,11 @@ class EventController extends Controller
      */
     public function index()
     {
-         $events = Event::all();
+        $events = Event::all();
         $events = Event::orderBy('date', 'asc')->get();
 
         return view('landing', [
-            'events' => $events, 
+            'events' => $events,
             'highlightedEvents' => Event::highlightedEvents()
         ]);
     }
@@ -37,7 +37,7 @@ class EventController extends Controller
      */
     public function create()
     {
-       return view('admin.eventForm');
+        return view('admin.eventForm');
     }
 
     /**
@@ -50,17 +50,16 @@ class EventController extends Controller
     {
         $data = $request->all();
 
-        if($request->hasFile('img'))
-        {
-            $destination_path ='public/image/event';
+        if ($request->hasFile('img')) {
+            $destination_path = 'public/image/event';
             $img = $request->file('img');
             $imgName = $img->getClientOriginalName();
             $path = $request->file('img')->storeAs($destination_path, $imgName);
             $data['img'] = $imgName;
         }
 
-       Event::create($data);
-       return redirect(route('admin.index'));
+        Event::create($data);
+        return redirect(route('admin.index'));
     }
 
     /**
@@ -72,7 +71,7 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
-        return view('show', ['event'=> $event]);
+        return view('show', ['event' => $event]);
     }
 
     /**
@@ -83,8 +82,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $eventToEdit=Event::find($id);
-        return view('admin.editEventform', ['event'=> $eventToEdit]);
+        $eventToEdit = Event::find($id);
+        return view('admin.editEventform', ['event' => $eventToEdit]);
     }
 
     /**
@@ -101,9 +100,8 @@ class EventController extends Controller
 
         $img = null;
 
-        if($request->hasFile('img'))
-        {
-            $destination_path ='public/image/event';
+        if ($request->hasFile('img')) {
+            $destination_path = 'public/image/event';
             $img = $request->file('img');
             $imgName = $img->getClientOriginalName();
             $path = $request->file('img')->storeAs($destination_path, $imgName);
@@ -111,7 +109,7 @@ class EventController extends Controller
         }
 
         if ($img) $eventToUpdate->img = $img;
-        $eventToUpdate->title= $request->input('title');
+        $eventToUpdate->title = $request->input('title');
         $eventToUpdate->date_time = $request->input('date_time');
         $eventToUpdate->text = $request->input('text');
         $eventToUpdate->users_max = $request->input('users_max');
@@ -128,26 +126,27 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-       // $eventToDelete = Event::findOrFail($id);
-      //  $eventToDelete->delete();
+        // $eventToDelete = Event::findOrFail($id);
+        //  $eventToDelete->delete();
         Event::destroy(($id));
         return back();
     }
 
-    public function pastEvents() 
+    public function pastEvents()
     {
         $events = Event::orderBy('date_time', 'ASC')->get();
-        return view('components.pastEvents', ['events'=>$events]);
-    } 
+        return view('components.pastEvents', ['events' => $events]);
+    }
 
-    public function nextEvents() 
+    public function nextEvents()
     {
         $events = Event::orderBy('date_time', 'ASC')->get();
-        return view('components.nextEvents', ['events'=>$events]);
-    } 
-    public function like($id) {
-        if(Auth::user()-> isLikeIt($id)) return back();
+        return view('components.nextEvents', ['events' => $events]);
+    }
+    public function like($id)
+    {
+        if (Auth::user()->isLikeIt($id)) return back();
         Auth::user()->likes()->attach($id);
         return back();
-    } 
+    }
 }

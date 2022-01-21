@@ -1,11 +1,11 @@
 <style>
-.title_init{
-    color:#323334;
-}
-.subtitle{
-    color:#323334;
-}
+  .title_init {
+    color: #323334;
+  }
 
+  .subtitle {
+    color: #323334;
+  }
 </style>
 <?php
 
@@ -32,13 +32,11 @@ $date = Carbon::now($tz);
   <a class="btn btn-outline-secondary" href="{{ route('pastEvents') }}">Past Courses</a>
   <a class="btn btn-outline-secondary" href="{{ route('home') }}">My Courses</a>
   <a class="btn btn-outline-secondary" href="{{ route('nextEvents') }}">Next Courses</a>
-
 </section>
 @endif
 @endauth
 
 @section('content')
-
 <main class="py-4">
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -120,5 +118,4 @@ $date = Carbon::now($tz);
   </div><!-- /.container -->
 </main>
 <x-footer />
-
 @endsection

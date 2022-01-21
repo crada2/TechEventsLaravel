@@ -44,16 +44,19 @@ class User extends Authenticatable implements MustVerifyEmail //MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function event() {
+    public function event()
+    {
         return $this->belongsToMany(Event::class);
     }
-//relacionar many to many con event.   (array de eventos)
-    public function likes(){
+    //relacionar many to many con event.   (array de eventos)
+    public function likes()
+    {
         return $this->belongsToMany(Event::class, "likes");
     }
-  
-    public function isLikeIt($eventId){
-        if($this->likes()->find($eventId)) return true;
+
+    public function isLikeIt($eventId)
+    {
+        if ($this->likes()->find($eventId)) return true;
         return false;
     }
 }

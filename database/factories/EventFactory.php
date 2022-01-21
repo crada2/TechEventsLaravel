@@ -15,11 +15,11 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker-> company(),
-            'img' => $this->faker-> imageUrl(),
-            'text' => $this->faker-> realtext(),
-            'date_time' => $this->faker-> dateTime(),
-            'users_max' => $this->faker-> numberBetween(10,20),
+            'title' => $this->faker->company(),
+            'img' => $this->faker->imageUrl(),
+            'text' => $this->faker->realtext(),
+            'date_time' => $this->faker->dateTime(),
+            'users_max' => $this->faker->numberBetween(10, 20),
         ];
     }
 }

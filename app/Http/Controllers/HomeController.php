@@ -39,7 +39,8 @@ class HomeController extends Controller
         return view('home', ['events' => $events]);
     }
 
-    public function enroll($id) {
+    public function enroll($id)
+    {
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
@@ -50,18 +51,18 @@ class HomeController extends Controller
             $user->event()->attach($event);
 
             $username = $user->name;
-            $correo = new SendCourse ($username, $event);
+            $correo = new SendCourse($username, $event);
             Mail::to($user->email)->send($correo);
         }
         return redirect()->route('home');
     }
 
-    public function unsubscribe($id) {
+    public function unsubscribe($id)
+    {
         $user = User::find(Auth::id());
         $event = Event::find($id);
 
         $user->event()->detach($event);
         return redirect()->route('home');
     }
-
 }

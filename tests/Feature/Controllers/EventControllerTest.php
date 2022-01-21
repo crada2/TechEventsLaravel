@@ -16,29 +16,29 @@ class EventControllerTest extends TestCase
      * @return void
      */
     public function test_admin_can_create_an_event()
-   {
-    $admin = User::factory()->create(["isAdmin"=>true]);
-    $event = Event::factory()->create();
+    {
+        $admin = User::factory()->create(["isAdmin" => true]);
+        $event = Event::factory()->create();
 
-    $response = $this->actingAs($admin)->get(route("events.create", $event->id));
-    $response->assertStatus(200)->assertViewIs('admin.eventForm');
-   }
-    
-   public function test_admin_can_edit_event()
-   {
-       $admin = User::factory()->create(["isAdmin"=>true]);
-       $event = Event::factory()->create();
+        $response = $this->actingAs($admin)->get(route("events.create", $event->id));
+        $response->assertStatus(200)->assertViewIs('admin.eventForm');
+    }
 
-       $response = $this->actingAs($admin)->get(route("edit", $event->id));
-       $response->assertStatus(200)->assertViewIs('admin.editEventform');
-   }
+    public function test_admin_can_edit_event()
+    {
+        $admin = User::factory()->create(["isAdmin" => true]);
+        $event = Event::factory()->create();
 
-   public function test_admin_can_update_event()
-   {
-    $admin = User::factory()->create(["isAdmin"=>true]);
-    $event = Event::factory()->create();
+        $response = $this->actingAs($admin)->get(route("edit", $event->id));
+        $response->assertStatus(200)->assertViewIs('admin.editEventform');
+    }
 
-    $response = $this->actingAs($admin)->get(route("update", $event->id));
-    $response->assertStatus(200)->assertViewIs('admin.editEventform');
-   }
+    public function test_admin_can_update_event()
+    {
+        $admin = User::factory()->create(["isAdmin" => true]);
+        $event = Event::factory()->create();
+
+        $response = $this->actingAs($admin)->get(route("update", $event->id));
+        $response->assertStatus(200)->assertViewIs('admin.editEventform');
+    }
 }

@@ -19,11 +19,11 @@ class HomeController extends TestCase
     public function test_no_login_under_can_not_enroll()
     {
         User::factory()->create();
-        $event=Event::factory()->create();
-        $response = $this->get(route("home",$event->id));
+        $event = Event::factory()->create();
+        $response = $this->get(route("home", $event->id));
 
         $response->assertStatus(302)
-                ->assertRedirect("/login");
+            ->assertRedirect("/login");
     }
 
     public function test_users_cant_enroll_on_full_event()
@@ -48,5 +48,5 @@ class HomeController extends TestCase
         $this->actingAs($user)->delete(route("unsubscribe", $event->id));
 
         $this->assertEquals(0, $user->event()->count());
-    } 
+    }
 }

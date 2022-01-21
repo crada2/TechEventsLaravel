@@ -28,7 +28,8 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    protected function redirectTo() {
+    protected function redirectTo()
+    {
         if (Auth::user()->isAdmin) return '/dashboard';
     }
 

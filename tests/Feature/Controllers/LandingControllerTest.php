@@ -20,7 +20,6 @@ class LandingControllerTest extends TestCase
         $response = $this->get(route('landing'));
 
         $response->assertStatus(200)
-        ->assertViewIs('landing');
+            ->assertViewIs('landing');
     }
 }
-
