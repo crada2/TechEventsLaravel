@@ -49,7 +49,7 @@ $date = Carbon::now($tz);
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="https://img.freepik.com/vector-gratis/fondo-degradado-tonos-verdes_23-2148373476.jpg?size=626&ext=jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://ak.picdn.net/shutterstock/videos/1012127192/thumb/4.jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1 class="title_init">The Ultimate Docker Coursee</h1>
@@ -58,7 +58,7 @@ $date = Carbon::now($tz);
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img opacity-10" width="100%" height="100%" src="https://img.freepik.com/vector-gratis/textura-granulada-degradada_23-2148987745.jpg?size=626&ext=jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img opacity-10" width="100%" height="100%" src="https://img.freepik.com/vector-gratis/fondo-pantalla-textura-granulada-degradado-degradado_52683-63424.jpg?size=626&ext=jpg" alt="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
         <div class="container">
           <div class="carousel-caption">
             <h1 class="title_init">The Ultimate React Native Series</h1>
@@ -88,7 +88,7 @@ $date = Carbon::now($tz);
   <!-- top eventos -->
   <hr class="featurette-divider">
   <div class="d-flex row">
-    <h1 class="title d-flex justify-content-center">TOP EVENTS</h1>
+    <h1 class="title d-flex justify-content-center">TOP COURSES</h1>
     <div class="container">
       <br>
       <!-- containers de articulos destacados -->
