@@ -37,7 +37,6 @@ $date = Carbon::now($tz);
 @endif
 @endauth
 
-
 @section('content')
 
 <main class="py-4">
